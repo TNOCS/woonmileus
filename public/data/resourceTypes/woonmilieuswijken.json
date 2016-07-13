@@ -1,0 +1,221 @@
+{
+    "featureTypes": {
+        "woonmilieuswijken": {
+            "name": "woonmilieuswijken",
+            "style": {
+                "iconUri": "images/woonmilieus.png",
+                "iconWidth": 24,
+                "iconHeight": 24,
+                "stroke": true,
+                "strokeWidth": 1,
+                "strokeColor": "#000000",
+                "selectedStrokeColor": "#0000FF",
+                "fillColor": "#FF8800",
+                "opacity": 1,
+                "fillOpacity": 1,
+                "nameLabel": "Wijknaam"
+            },
+            "contourProperty": "_bag_contour",
+            "propertyTypeKeys": "Wijknaam;Gemeentenaam;Wijkcode (CBS);Gemeentecode (CBS);Gemiddelde afstand tot huisartsenpraktijk;Gemiddelde afstand tot apotheek;Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken);Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken);Gemiddelde afstand tot supermarkt;Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen;Gemiddelde afstand tot oprit snelweg;Gemiddelde afstand tot treinstation;Aantal OV-routes in wijk;Aantal OV-haltes in wijk;Gemiddeld aantal routes per OV-halte;Meer/minder FTE aanwezig dan landelijk gemiddelde;Diversiteit woningvoorraad;Diversiteit bevolkingsopbouw;Veiligheid;Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen;Kwaliteit fysieke omgeving;"
+        }
+    },
+    "propertyTypeData": {
+        "Wijknaam": {
+            "label": "Wijknaam",
+            "title": "Wijknaam",
+            "type": "text",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemeentenaam": {
+            "label": "Gemeentenaam",
+            "title": "Gemeentenaam",
+            "type": "text",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Wijkcode (CBS)": {
+            "label": "Wijkcode (CBS)",
+            "title": "Wijkcode (CBS)",
+            "type": "text",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemeentecode (CBS)": {
+            "label": "Gemeentecode (CBS)",
+            "title": "Gemeentecode (CBS)",
+            "type": "text",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddelde afstand tot huisartsenpraktijk": {
+            "label": "Gemiddelde afstand tot huisartsenpraktijk",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddelde afstand tot huisartsenpraktijk",
+            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde huisartsenpost, berekend over de weg (uitgedrukt in km).",
+            "type": "number",
+            "stringFormat": "{0:#,#.#}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddelde afstand tot apotheek": {
+            "label": "Gemiddelde afstand tot apotheek",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddelde afstand tot apotheek",
+            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde apotheek, berekend over de weg (uitgedrukt in km).",
+            "type": "number",
+            "stringFormat": "{0:#,#.#}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)": {
+            "label": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+            "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (inclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+            "type": "number",
+            "stringFormat": "{0:#,#.#}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)": {
+            "label": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+            "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (exclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+            "type": "number",
+            "stringFormat": "{0:#,#.#}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddelde afstand tot supermarkt": {
+            "label": "Gemiddelde afstand tot supermarkt",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddelde afstand tot supermarkt",
+            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde supermarkt, berekend over de weg (uitgedrukt in km).",
+            "type": "number",
+            "stringFormat": "{0:#,#.#}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen": {
+            "label": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde winkel voor overige dagelijkse levensmiddelen, berekend over de weg (uitgedrukt in km).",
+            "type": "number",
+            "stringFormat": "{0:#,#.#}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddelde afstand tot oprit snelweg": {
+            "label": "Gemiddelde afstand tot oprit snelweg",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddelde afstand tot oprit snelweg",
+            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde oprit snelweg, berekend over de weg (uitgedrukt in km).",
+            "type": "number",
+            "stringFormat": "{0:#,#.#}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddelde afstand tot treinstation": {
+            "label": "Gemiddelde afstand tot treinstation",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddelde afstand tot treinstation",
+            "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde treinstation, berekend over de weg (uitgedrukt in km).",
+            "type": "number",
+            "stringFormat": "{0:#,#.#}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Aantal OV-routes in wijk": {
+            "label": "Aantal OV-routes in wijk",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Aantal OV-routes in wijk",
+            "description": "Het aantal OV-routes in het gebied.",
+            "type": "number",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Aantal OV-haltes in wijk": {
+            "label": "Aantal OV-haltes in wijk",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Aantal OV-haltes in wijk",
+            "description": "Het aantal OV-haltes in het gebied.",
+            "type": "number",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddeld aantal routes per OV-halte": {
+            "label": "Gemiddeld aantal routes per OV-halte",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Gemiddeld aantal routes per OV-halte",
+            "description": "Het gemiddelde aantal routes per OV-halte in het gebied.",
+            "type": "number",
+            "stringFormat": "{0:#,#.##}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Meer/minder FTE aanwezig dan landelijk gemiddelde": {
+            "label": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+            "section": "Nabijheid en bereikbaarheid van voorzieningen",
+            "title": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+            "description": "Meer/minder FTE aanwezig in het gebied dan het landelijk gemiddelde (data op gemeenteniveau).",
+            "type": "number",
+            "stringFormat": "{0:#,#.##}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Diversiteit woningvoorraad": {
+            "label": "Diversiteit woningvoorraad",
+            "section": "Sociale context",
+            "title": "Diversiteit woningvoorraad",
+            "description": "Diversiteit woningvoorraad (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+            "type": "number",
+            "stringFormat": "{0:#,#.##}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Diversiteit bevolkingsopbouw": {
+            "label": "Diversiteit bevolkingsopbouw",
+            "section": "Sociale context",
+            "title": "Diversiteit bevolkingsopbouw",
+            "description": "Diversiteit bevolkingsopbouw (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+            "type": "number",
+            "stringFormat": "{0:#,#.##}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Veiligheid": {
+            "label": "Veiligheid",
+            "section": "Sociale context",
+            "title": "Veiligheid",
+            "description": "Veiligheid (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+            "type": "number",
+            "stringFormat": "{0:#,#.##}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen": {
+            "label": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+            "section": "Sociale context",
+            "title": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+            "description": "Het gemiddelde aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen in het gebied (data op gemeenteniveau).",
+            "type": "number",
+            "stringFormat": "{0:#,#.##}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        },
+        "Kwaliteit fysieke omgeving": {
+            "label": "Kwaliteit fysieke omgeving",
+            "section": "Beweegvriendelijke omgeving",
+            "title": "Kwaliteit fysieke omgeving",
+            "description": "Kwaliteit fysieke omgeving (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+            "type": "number",
+            "stringFormat": "{0:#,#.##}",
+            "visibleInCallOut": true,
+            "canEdit": true
+        }
+    },
+    "id": "woonmilieuswijken"
+}

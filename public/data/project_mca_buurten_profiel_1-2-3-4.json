@@ -1,0 +1,1108 @@
+{
+  "id": "woonmilieus",
+  "title": "mca_buurten_p1234",
+  "logo": "images/CommonSenseRound.png",
+  "url": "/api/projects/woonmilieus",
+  "isDynamic": true,
+  "timeLine": {
+    "isExpanded": false,
+    "enableLive": true,
+    "enablePlay": true,
+    "enableEvents": true,
+    "enableFocus": true,
+    "focus": 1467931725000,
+    "start": 1467410400000,
+    "end": 1468015200000,
+    "range": 604800000,
+    "zoomLevel": 3600000,
+    "zoomLevelName": "hours"
+  },
+  "mcas": [
+    {
+      "userWeight": 1,
+      "criteria": [
+        {
+          "userWeight": 1,
+          "criteria": [
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot huisartsenpraktijk",
+              "title": "Gemiddelde afstand tot huisartsenpraktijk",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde huisartsenpost, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#40004b"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot apotheek",
+              "title": "Gemiddelde afstand tot apotheek",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde apotheek, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#611a6e"
+            },
+            {
+              "userWeight": -2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+              "title": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (inclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.09090909090909091,
+              "color": "#7e3b8d"
+            },
+            {
+              "userWeight": -2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+              "title": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (exclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.09090909090909091,
+              "color": "#9467a6"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot supermarkt",
+              "title": "Gemiddelde afstand tot supermarkt",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde supermarkt, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#ad8abd"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+              "title": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde winkel voor overige dagelijkse levensmiddelen, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#c6aad2"
+            },
+            {
+              "userWeight": -1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot oprit snelweg",
+              "title": "Gemiddelde afstand tot oprit snelweg",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde oprit snelweg, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.045454545454545456,
+              "color": "#ddc8e1"
+            },
+            {
+              "userWeight": -1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot treinstation",
+              "title": "Gemiddelde afstand tot treinstation",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde treinstation, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.045454545454545456,
+              "color": "#ede1ed"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Aantal OV-routes in buurt",
+              "title": "Aantal OV-routes in buurt",
+              "description": "Het aantal OV-routes in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#f7f7f7"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Aantal OV-haltes in buurt",
+              "title": "Aantal OV-haltes in buurt",
+              "description": "Het aantal OV-haltes in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#e4f2e0"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddeld aantal routes per OV-halte",
+              "title": "Gemiddeld aantal routes per OV-halte",
+              "description": "Het gemiddelde aantal routes per OV-halte in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#cceac6"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+              "title": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+              "description": "Meer/minder FTE aanwezig in het gebied dan het landelijk gemiddelde (data op gemeenteniveau).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#acdda6"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Nabijheid en bereikbaarheid van voorzieningen",
+          "weight": 0.3333333333333333,
+          "color": "#a50026"
+        },
+        {
+          "userWeight": 1,
+          "criteria": [
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Diversiteit woningvoorraad",
+              "title": "Diversiteit woningvoorraad",
+              "description": "Diversiteit woningvoorraad (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.16666666666666666,
+              "color": "#80c480"
+            },
+            {
+              "userWeight": 2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Diversiteit bevolkingsopbouw",
+              "title": "Diversiteit bevolkingsopbouw",
+              "description": "Diversiteit bevolkingsopbouw (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.3333333333333333,
+              "color": "#52a75b"
+            },
+            {
+              "userWeight": 2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Veiligheid",
+              "title": "Veiligheid",
+              "description": "Veiligheid (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.3333333333333333,
+              "color": "#2a8541"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+              "title": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+              "description": "Het gemiddelde aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen in het gebied (data op gemeenteniveau).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.16666666666666666,
+              "color": "#10642c"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Sociale context",
+          "weight": 0.3333333333333333,
+          "color": "#ffffbf"
+        },
+        {
+          "userWeight": 1,
+          "criteria": [
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Kwaliteit fysieke omgeving",
+              "title": "Kwaliteit fysieke omgeving",
+              "description": "Kwaliteit fysieke omgeving (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 1,
+              "color": "#00441b"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Beweegvriendelijke omgeving",
+          "weight": 0.3333333333333333,
+          "color": "#313695"
+        }
+      ],
+      "isPlaUpdated": false,
+      "isPlaScaled": false,
+      "id": "f883e27b-4a17-4ee6-9eb5-8af282f80992",
+      "userWeightMax": 5,
+      "featureIds": [
+        "data/api/resourceTypes/woonmilieusbuurten.json#woonmilieusbuurten"
+      ],
+      "weight": 1,
+      "title": "Profiel 1",
+      "label": "mca_Profiel_1",
+      "stringFormat": "{0:0.0}"
+    },
+    {
+      "userWeight": 1,
+      "criteria": [
+        {
+          "userWeight": 2,
+          "criteria": [
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot huisartsenpraktijk",
+              "title": "Gemiddelde afstand tot huisartsenpraktijk",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde huisartsenpost, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#40004b"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot apotheek",
+              "title": "Gemiddelde afstand tot apotheek",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde apotheek, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#611a6e"
+            },
+            {
+              "userWeight": -2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+              "title": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (inclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.09090909090909091,
+              "color": "#7e3b8d"
+            },
+            {
+              "userWeight": -2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+              "title": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (exclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.09090909090909091,
+              "color": "#9467a6"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot supermarkt",
+              "title": "Gemiddelde afstand tot supermarkt",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde supermarkt, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#ad8abd"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+              "title": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde winkel voor overige dagelijkse levensmiddelen, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#c6aad2"
+            },
+            {
+              "userWeight": -1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot oprit snelweg",
+              "title": "Gemiddelde afstand tot oprit snelweg",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde oprit snelweg, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.045454545454545456,
+              "color": "#ddc8e1"
+            },
+            {
+              "userWeight": -1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot treinstation",
+              "title": "Gemiddelde afstand tot treinstation",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde treinstation, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.045454545454545456,
+              "color": "#ede1ed"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Aantal OV-routes in buurt",
+              "title": "Aantal OV-routes in buurt",
+              "description": "Het aantal OV-routes in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#f7f7f7"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Aantal OV-haltes in buurt",
+              "title": "Aantal OV-haltes in buurt",
+              "description": "Het aantal OV-haltes in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#e4f2e0"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddeld aantal routes per OV-halte",
+              "title": "Gemiddeld aantal routes per OV-halte",
+              "description": "Het gemiddelde aantal routes per OV-halte in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#cceac6"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+              "title": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+              "description": "Meer/minder FTE aanwezig in het gebied dan het landelijk gemiddelde (data op gemeenteniveau).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#acdda6"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Nabijheid en bereikbaarheid van voorzieningen",
+          "weight": 0.5,
+          "color": "#a50026"
+        },
+        {
+          "userWeight": 1,
+          "criteria": [
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Diversiteit woningvoorraad",
+              "title": "Diversiteit woningvoorraad",
+              "description": "Diversiteit woningvoorraad (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.16666666666666666,
+              "color": "#80c480"
+            },
+            {
+              "userWeight": 2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Diversiteit bevolkingsopbouw",
+              "title": "Diversiteit bevolkingsopbouw",
+              "description": "Diversiteit bevolkingsopbouw (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.3333333333333333,
+              "color": "#52a75b"
+            },
+            {
+              "userWeight": 2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Veiligheid",
+              "title": "Veiligheid",
+              "description": "Veiligheid (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.3333333333333333,
+              "color": "#2a8541"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+              "title": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+              "description": "Het gemiddelde aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen in het gebied (data op gemeenteniveau).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.16666666666666666,
+              "color": "#10642c"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Sociale context",
+          "weight": 0.25,
+          "color": "#ffffbf"
+        },
+        {
+          "userWeight": 1,
+          "criteria": [
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Kwaliteit fysieke omgeving",
+              "title": "Kwaliteit fysieke omgeving",
+              "description": "Kwaliteit fysieke omgeving (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 1,
+              "color": "#00441b"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Beweegvriendelijke omgeving",
+          "weight": 0.25,
+          "color": "#313695"
+        }
+      ],
+      "isPlaUpdated": false,
+      "isPlaScaled": false,
+      "id": "4b4529cc-c982-485c-cb8a-1163773ec9d0",
+      "userWeightMax": 5,
+      "featureIds": [
+        "data/api/resourceTypes/woonmilieusbuurten.json#woonmilieusbuurten"
+      ],
+      "weight": 1,
+      "title": "Profiel 2",
+      "label": "mca_Profiel_2",
+      "stringFormat": "{0:0.0}"
+    },
+    {
+      "userWeight": 1,
+      "criteria": [
+        {
+          "userWeight": 3,
+          "criteria": [
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot huisartsenpraktijk",
+              "title": "Gemiddelde afstand tot huisartsenpraktijk",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde huisartsenpost, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#40004b"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot apotheek",
+              "title": "Gemiddelde afstand tot apotheek",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde apotheek, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#611a6e"
+            },
+            {
+              "userWeight": -2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+              "title": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (inclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.09090909090909091,
+              "color": "#7e3b8d"
+            },
+            {
+              "userWeight": -2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+              "title": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (exclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.09090909090909091,
+              "color": "#9467a6"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot supermarkt",
+              "title": "Gemiddelde afstand tot supermarkt",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde supermarkt, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#ad8abd"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+              "title": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde winkel voor overige dagelijkse levensmiddelen, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#c6aad2"
+            },
+            {
+              "userWeight": -1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot oprit snelweg",
+              "title": "Gemiddelde afstand tot oprit snelweg",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde oprit snelweg, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.045454545454545456,
+              "color": "#ddc8e1"
+            },
+            {
+              "userWeight": -1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot treinstation",
+              "title": "Gemiddelde afstand tot treinstation",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde treinstation, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.045454545454545456,
+              "color": "#ede1ed"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Aantal OV-routes in buurt",
+              "title": "Aantal OV-routes in buurt",
+              "description": "Het aantal OV-routes in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#f7f7f7"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Aantal OV-haltes in buurt",
+              "title": "Aantal OV-haltes in buurt",
+              "description": "Het aantal OV-haltes in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#e4f2e0"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddeld aantal routes per OV-halte",
+              "title": "Gemiddeld aantal routes per OV-halte",
+              "description": "Het gemiddelde aantal routes per OV-halte in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#cceac6"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+              "title": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+              "description": "Meer/minder FTE aanwezig in het gebied dan het landelijk gemiddelde (data op gemeenteniveau).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#acdda6"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Nabijheid en bereikbaarheid van voorzieningen",
+          "weight": 0.6,
+          "color": "#a50026"
+        },
+        {
+          "userWeight": 1,
+          "criteria": [
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Diversiteit woningvoorraad",
+              "title": "Diversiteit woningvoorraad",
+              "description": "Diversiteit woningvoorraad (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.16666666666666666,
+              "color": "#80c480"
+            },
+            {
+              "userWeight": 2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Diversiteit bevolkingsopbouw",
+              "title": "Diversiteit bevolkingsopbouw",
+              "description": "Diversiteit bevolkingsopbouw (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.3333333333333333,
+              "color": "#52a75b"
+            },
+            {
+              "userWeight": 2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Veiligheid",
+              "title": "Veiligheid",
+              "description": "Veiligheid (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.3333333333333333,
+              "color": "#2a8541"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+              "title": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+              "description": "Het gemiddelde aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen in het gebied (data op gemeenteniveau).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.16666666666666666,
+              "color": "#10642c"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Sociale context",
+          "weight": 0.2,
+          "color": "#ffffbf"
+        },
+        {
+          "userWeight": 1,
+          "criteria": [
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Kwaliteit fysieke omgeving",
+              "title": "Kwaliteit fysieke omgeving",
+              "description": "Kwaliteit fysieke omgeving (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 1,
+              "color": "#00441b"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Beweegvriendelijke omgeving",
+          "weight": 0.2,
+          "color": "#313695"
+        }
+      ],
+      "isPlaUpdated": false,
+      "isPlaScaled": false,
+      "id": "21b05740-42d3-44cb-3077-4b552be85e7b",
+      "userWeightMax": 5,
+      "featureIds": [
+        "data/api/resourceTypes/woonmilieusbuurten.json#woonmilieusbuurten"
+      ],
+      "weight": 1,
+      "title": "Profiel 3",
+      "label": "mca_Profiel_3",
+      "stringFormat": "{0:0.0}"
+    },
+    {
+      "userWeight": 1,
+      "criteria": [
+        {
+          "userWeight": 4,
+          "criteria": [
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot huisartsenpraktijk",
+              "title": "Gemiddelde afstand tot huisartsenpraktijk",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde huisartsenpost, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#40004b"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot apotheek",
+              "title": "Gemiddelde afstand tot apotheek",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde apotheek, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#611a6e"
+            },
+            {
+              "userWeight": -2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+              "title": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (inclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.09090909090909091,
+              "color": "#7e3b8d"
+            },
+            {
+              "userWeight": -2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+              "title": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (exclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.09090909090909091,
+              "color": "#9467a6"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot supermarkt",
+              "title": "Gemiddelde afstand tot supermarkt",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde supermarkt, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#ad8abd"
+            },
+            {
+              "userWeight": -3,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+              "title": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde winkel voor overige dagelijkse levensmiddelen, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.13636363636363635,
+              "color": "#c6aad2"
+            },
+            {
+              "userWeight": -1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot oprit snelweg",
+              "title": "Gemiddelde afstand tot oprit snelweg",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde oprit snelweg, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.045454545454545456,
+              "color": "#ddc8e1"
+            },
+            {
+              "userWeight": -1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddelde afstand tot treinstation",
+              "title": "Gemiddelde afstand tot treinstation",
+              "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde treinstation, berekend over de weg (uitgedrukt in km).",
+              "scores": "[0,0 10,1]",
+              "weight": -0.045454545454545456,
+              "color": "#ede1ed"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Aantal OV-routes in buurt",
+              "title": "Aantal OV-routes in buurt",
+              "description": "Het aantal OV-routes in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#f7f7f7"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Aantal OV-haltes in buurt",
+              "title": "Aantal OV-haltes in buurt",
+              "description": "Het aantal OV-haltes in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#e4f2e0"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddeld aantal routes per OV-halte",
+              "title": "Gemiddeld aantal routes per OV-halte",
+              "description": "Het gemiddelde aantal routes per OV-halte in het gebied.",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#cceac6"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+              "title": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
+              "description": "Meer/minder FTE aanwezig in het gebied dan het landelijk gemiddelde (data op gemeenteniveau).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.045454545454545456,
+              "color": "#acdda6"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Nabijheid en bereikbaarheid van voorzieningen",
+          "weight": 0.5714285714285714,
+          "color": "#a50026"
+        },
+        {
+          "userWeight": 2,
+          "criteria": [
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Diversiteit woningvoorraad",
+              "title": "Diversiteit woningvoorraad",
+              "description": "Diversiteit woningvoorraad (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.16666666666666666,
+              "color": "#80c480"
+            },
+            {
+              "userWeight": 2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Diversiteit bevolkingsopbouw",
+              "title": "Diversiteit bevolkingsopbouw",
+              "description": "Diversiteit bevolkingsopbouw (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.3333333333333333,
+              "color": "#52a75b"
+            },
+            {
+              "userWeight": 2,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Veiligheid",
+              "title": "Veiligheid",
+              "description": "Veiligheid (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.3333333333333333,
+              "color": "#2a8541"
+            },
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+              "title": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
+              "description": "Het gemiddelde aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen in het gebied (data op gemeenteniveau).",
+              "scores": "[0,0 10,1]",
+              "weight": 0.16666666666666666,
+              "color": "#10642c"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Sociale context",
+          "weight": 0.2857142857142857,
+          "color": "#ffffbf"
+        },
+        {
+          "userWeight": 1,
+          "criteria": [
+            {
+              "userWeight": 1,
+              "criteria": [],
+              "isPlaUpdated": false,
+              "isPlaScaled": true,
+              "label": "Kwaliteit fysieke omgeving",
+              "title": "Kwaliteit fysieke omgeving",
+              "description": "Kwaliteit fysieke omgeving (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
+              "scores": "[0,0 10,1]",
+              "weight": 1,
+              "color": "#00441b"
+            }
+          ],
+          "isPlaUpdated": false,
+          "isPlaScaled": false,
+          "title": "Beweegvriendelijke omgeving",
+          "weight": 0.14285714285714285,
+          "color": "#313695"
+        }
+      ],
+      "isPlaUpdated": false,
+      "isPlaScaled": false,
+      "id": "c4c99e23-bbda-4c1d-d811-084001057ecd",
+      "userWeightMax": 5,
+      "featureIds": [
+        "data/api/resourceTypes/woonmilieusbuurten.json#woonmilieusbuurten"
+      ],
+      "weight": 1,
+      "title": "Profiel 4",
+      "label": "mca_Profiel_4",
+      "stringFormat": "{0:0.0}"
+    }
+  ],
+  "profile": {
+    "authenticationMethod": 1
+  },
+  "datasources": null,
+  "dashboards": [
+    {
+      "id": "map",
+      "name": "Home",
+      "showMap": true,
+      "mapWidth": "100%",
+      "alignMapRight": false,
+      "showTimeline": true,
+      "showLeftmenu": true,
+      "showLegend": false,
+      "showRightmenu": false,
+      "showBackgroundImage": false,
+      "widgets": null,
+      "mobile": true
+    },
+    {
+      "id": "datatable",
+      "name": "Table",
+      "showMap": false,
+      "mapWidth": "100%",
+      "alignMapRight": false,
+      "showTimeline": false,
+      "showLeftmenu": false,
+      "showLegend": false,
+      "showRightmenu": false,
+      "showBackgroundImage": false,
+      "widgets": [
+        {
+          "id": "datatable_id",
+          "directive": "datatable",
+          "enabled": true,
+          "width": "100%",
+          "height": "100%"
+        }
+      ],
+      "mobile": true
+    }
+  ],
+  "modeSelection": true,
+  "expertMode": 3,
+  "propertyTypeData": {},
+  "groups": [
+    {
+      "id": "Woonmilieus",
+      "title": "Woonmilieus",
+      "description": "",
+      "clustering": true,
+      "clusterLevel": 12,
+      "layers": [
+        {
+          "id": "woonmilieusbuurten",
+          "title": "Buurten",
+          "description": "Woonmilieus geven informatie over de geschiktheid van de woonomgeving voor senioren met functioneringsbeperkingen. De kaartlaag buurten toont de woonmilieus van alle Nederlandse buurten volgens de CBS-indeling. Meerdere buurten kunnen samen een wijk vormen.",
+          "type": "geojson",
+          "renderType": "geojson",
+          "heatmapItems": null,
+          "url": "/api/layers/woonmilieusbuurten",
+          "typeUrl": "data/api/resourceTypes/woonmilieusbuurten.json",
+          "opacity": 100,
+          "defaultFeatureType": "woonmilieusbuurten",
+          "isDynamic": false,
+          "tags": []
+        },
+        {
+          "id": "woonmilieuswijken",
+          "title": "Wijken",
+          "description": "Woonmilieus geven informatie over de geschiktheid van de woonomgeving voor senioren met functioneringsbeperkingen. De kaartlaag wijken toont de woonmilieus van alle Nederlandse wijken volgens de CBS-indeling. Een wijk kan onderverdeeld zijn in meerdere buurten.",
+          "type": "geojson",
+          "renderType": "geojson",
+          "heatmapItems": null,
+          "url": "/api/layers/woonmilieuswijken",
+          "typeUrl": "data/api/resourceTypes/woonmilieuswijken.json",
+          "opacity": 100,
+          "defaultFeatureType": "woonmilieuswijken",
+          "isDynamic": false,
+          "tags": []
+        }
+      ]
+    }
+  ],
+  "layerDirectory": "/api/layers",
+  "searchProviders": []
+}
