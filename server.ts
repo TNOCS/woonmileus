@@ -8,7 +8,7 @@ Winston.add(Winston.transports.Console, <Winston.ConsoleTransportOptions>{
     prettyPrint: true
 });
 
-var startDatabaseConnection = true;
+var startDatabaseConnection = false;
 
 var cs = new csweb.csServer(__dirname, <csweb.csServerOptions>{
     port: 3003,

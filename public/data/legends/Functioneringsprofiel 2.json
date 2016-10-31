@@ -1,0 +1,64 @@
+{
+    "id": "profiel2",
+    "description": "Functioneringsprofiel 2",
+    "legendKind": "discrete",
+    "visualAspect": "fillColor",
+    "legendEntries": [
+        {
+            "label": "min. waarde tot -2 stand. deviaties",
+            "interval": {
+                "min": 9.7,
+                "max": 19.15
+            },
+            "color": "#c00"
+        },
+        {
+            "label": "-2 stand. deviaties tot -1 stand. deviatie",
+            "interval": {
+                "min": 19.15,
+                "max": 22.53
+            },
+            "color": "#f60"
+        },
+        {
+            "label": "-1 stand. deviatie tot het gemiddelde",
+            "interval": {
+                "min": 22.53,
+                "max": 25.91
+            },
+            "color": "#ff0"
+        },
+        {
+            "label": "gemiddelde tot mediaan",
+            "interval": {
+                "min": 25.91,
+                "max": 27.2
+            },
+            "color": "#0f0"
+        },
+        {
+            "label": "mediaan tot halverwege mediaan-modus",
+            "interval": {
+                "min": 27.2,
+                "max": 27.6
+            },
+            "color": "#3c3"
+        },
+        {
+            "label": "halverwege mediaan-modus tot modus",
+            "interval": {
+                "min": 27.6,
+                "max": 28
+            },
+            "color": "#090"
+        },
+        {
+            "label": "modus tot maximumwaarde",
+            "interval": {
+                "min": 28,
+                "max": 32.7
+            },
+            "color": "#060"
+        }
+    ]
+}

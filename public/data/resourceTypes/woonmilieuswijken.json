@@ -1,7 +1,7 @@
 {
     "featureTypes": {
         "woonmilieuswijken": {
-            "name": "woonmilieuswijken",
+            "name": "Wijken",
             "style": {
                 "iconUri": "images/woonmilieus.png",
                 "iconWidth": 24,
