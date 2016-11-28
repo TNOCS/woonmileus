@@ -1,211 +1,241 @@
 {
-    "featureTypes": {
-        "woonmilieusbuurten": {
-            "name": "Buurten",
-            "style": {
-                "iconUri": "images/woonmilieus.png",
-                "iconWidth": 24,
-                "iconHeight": 24,
-                "stroke": true,
-                "strokeWidth": 1,
-                "strokeColor": "#000000",
-                "selectedStrokeColor": "#0000FF",
-                "fillColor": "#FF8800",
-                "opacity": 1,
-                "fillOpacity": 1,
-                "nameLabel": "v"
-            },
-            "contourProperty": "_bag_contour"
-        }
+  "featureTypes": {
+    "woonmilieusbuurten": {
+      "name": "woonmilieusbuurten",
+      "style": {
+        "iconUri": "data/images/gemeente.png",
+        "iconWidth": 24,
+        "iconHeight": 24,
+        "stroke": true,
+        "strokeWidth": 1,
+        "strokeColor": "#000000",
+        "selectedStrokeColor": "#0000FF",
+        "fillColor": "#FF8800",
+        "opacity": 1,
+        "fillOpacity": 1,
+        "nameLabel": "Buurtnaam"
+      },
+      "contourProperty": "_bag_contour",
+      "propertyTypeKeys": "Buurtnaam;AB;AC;Buurtcode;AE;AF;AG;AH;AI;AJ;AK;AL;AM;AN;AO;AP;AQ;AR;AS;AT;AU;AV;AW;"
+    }
+  },
+  "propertyTypeData": {
+    "Buurtnaam": {
+      "label": "Buurtnaam",
+      "title": "Buurtnaam",
+      "description": "Bron: CBS, 2014",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
     },
-    "propertyTypeData": {
-        "v": {
-            "title": "Buurtnaam",
-            "type": "text",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "c": {
-            "title": "Gemeentenaam",
-            "type": "text",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "a": {
-            "title": "Wijknaam",
-            "type": "text",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "w": {
-            "title": "Buurtcode (CBS)",
-            "type": "text",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "d": {
-            "title": "Gemeentecode (CBS)",
-            "type": "text",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "b": {
-            "title": "Wijkcode (CBS)",
-            "type": "text",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "e": {
-            "section": "Voorzieningen",
-            "title": "Gemiddelde afstand tot huisartsenpraktijk",
-            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde huisartsenpost, berekend over de weg (uitgedrukt in km).",
-            "type": "number",
-            "stringFormat": "{0:#,#.#}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "f": {
-            "section": "Voorzieningen",
-            "title": "Gemiddelde afstand tot apotheek",
-            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde apotheek, berekend over de weg (uitgedrukt in km).",
-            "type": "number",
-            "stringFormat": "{0:#,#.#}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "g": {
-            "section": "Voorzieningen",
-            "title": "Gemiddelde afstand tot ziekenhuis (inclusief buitenpoliklinieken)",
-            "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (inclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
-            "type": "number",
-            "stringFormat": "{0:#,#.#}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "h": {
-            "section": "Voorzieningen",
-            "title": "Gemiddelde afstand tot ziekenhuis (exclusief buitenpoliklinieken)",
-            "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde ziekenhuis (exclusief buitenpoliklinieken), berekend over de weg (uitgedrukt in km).",
-            "type": "number",
-            "stringFormat": "{0:#,#.#}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "i": {
-            "section": "Voorzieningen",
-            "title": "Gemiddelde afstand tot supermarkt",
-            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde supermarkt, berekend over de weg (uitgedrukt in km).",
-            "type": "number",
-            "stringFormat": "{0:#,#.#}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "j": {
-            "section": "Voorzieningen",
-            "title": "Gemiddelde afstand tot overige voorziening voor dagelijkse levensmiddelen",
-            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde winkel voor overige dagelijkse levensmiddelen, berekend over de weg (uitgedrukt in km).",
-            "type": "number",
-            "stringFormat": "{0:#,#.#}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "k": {
-            "section": "Voorzieningen",
-            "title": "Gemiddelde afstand tot oprit snelweg",
-            "description": "De gemiddelde afstand van alle inwoners in het gebied tot de dichtsbijzijnde oprit snelweg, berekend over de weg (uitgedrukt in km).",
-            "type": "number",
-            "stringFormat": "{0:#,#.#}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "l": {
-            "section": "Voorzieningen",
-            "title": "Gemiddelde afstand tot treinstation",
-            "description": "De gemiddelde afstand van alle inwoners in het gebied tot het dichtsbijzijnde treinstation, berekend over de weg (uitgedrukt in km).",
-            "type": "number",
-            "stringFormat": "{0:#,#.#}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "x": {
-            "section": "Voorzieningen",
-            "title": "Aantal OV-routes in buurt",
-            "description": "Het aantal OV-routes in het gebied.",
-            "type": "number",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "y": {
-            "section": "Voorzieningen",
-            "title": "Aantal OV-haltes in buurt",
-            "description": "Het aantal OV-haltes in het gebied.",
-            "type": "number",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "o": {
-            "section": "Voorzieningen",
-            "title": "Gemiddeld aantal routes per OV-halte",
-            "description": "Het gemiddelde aantal routes per OV-halte in het gebied.",
-            "type": "number",
-            "stringFormat": "{0:#,#.##}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "p": {
-            "section": "Voorzieningen",
-            "title": "Meer/minder FTE aanwezig dan landelijk gemiddelde",
-            "description": "Meer/minder FTE aanwezig in het gebied dan het landelijk gemiddelde (data op gemeenteniveau).",
-            "type": "number",
-            "stringFormat": "{0:#,#.##}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "q": {
-            "section": "Sociale context",
-            "title": "Diversiteit woningvoorraad",
-            "description": "Diversiteit woningvoorraad (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
-            "type": "number",
-            "stringFormat": "{0:#,#.##}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "r": {
-            "section": "Sociale context",
-            "title": "Diversiteit bevolkingsopbouw",
-            "description": "Diversiteit bevolkingsopbouw (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
-            "type": "number",
-            "stringFormat": "{0:#,#.##}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "s": {
-            "section": "Sociale context",
-            "title": "Veiligheid",
-            "description": "Veiligheid (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
-            "type": "number",
-            "stringFormat": "{0:#,#.##}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "t": {
-            "section": "Sociale context",
-            "title": "Gemiddeld aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen",
-            "description": "Het gemiddelde aantal uren mantelzorg per persoon met 1 of meerdere langdurige aandoeningen in het gebied (data op gemeenteniveau).",
-            "type": "number",
-            "stringFormat": "{0:#,#.##}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        },
-        "u": {
-            "section": "Beweegvriendelijke omgeving",
-            "title": "Kwaliteit fysieke omgeving",
-            "description": "Kwaliteit fysieke omgeving (afwijking t.o.v. het Nederlands gemiddelde; indexscore van -50 tot +50).",
-            "type": "number",
-            "stringFormat": "{0:#,#.##}",
-            "visibleInCallOut": true,
-            "canEdit": true
-        }
+    "AB": {
+      "label": "AB",
+      "title": "Gemeentenaam",
+      "description": "Bron: CBS, 2014",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
     },
-    "id": "woonmilieusbuurten"
+    "AC": {
+      "label": "AC",
+      "title": "Wijknaam",
+      "description": "Bron: CBS, 2014",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "Buurtcode": {
+      "label": "Buurtcode",
+      "title": "Buurtcode",
+      "description": "Bron: CBS, 2014",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AE": {
+      "label": "AE",
+      "title": "Gemeentecode",
+      "description": "Bron: CBS, 2014",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AF": {
+      "label": "AF",
+      "title": "Wijkcode",
+      "description": "Bron: CBS, 2014",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AG": {
+      "label": "AG",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Afstand tot huisartsenpraktijk (km)",
+      "description": "De gemiddelde afstand van alle inwoners in een gebied tot de dichtstbijzijnde huisartsenpraktijk, berekend over de weg (uitgedrukt in km). Een huisartsenpraktijk is een pand of ruimte waarin een of meer huisartsen (samen) werken. Bron: CBS Nabijheidsstatistiek, 2015",
+      "type": "number",
+      "stringFormat": "{0:#,#.#}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AH": {
+      "label": "AH",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Afstand tot apotheek (km)",
+      "description": "De gemiddelde afstand van alle inwoners in een gebied tot de dichtstbijzijnde apotheek of apotheekhoudende huisarts, berekend over de weg (uitgedrukt in km). Bron: CBS Nabijheidsstatistiek, 2014",
+      "type": "number",
+      "stringFormat": "{0:#,#.#}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AI": {
+      "label": "AI",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Afstand tot ziekenhuis incl. buitenpoliklinieken (km)",
+      "description": "De gemiddelde afstand van alle inwoners in een gebied tot het dichtstbijzijnde ziekenhuis, berekend over de weg (uitgedrukt in km). Een ziekenhuis is een instelling voor onderzoek, behandeling en verpleging van zieken. In een ziekenhuis kunnen patiënten voor meer dan 24 uur opgenomen worden en er kunnen grote operaties worden uitgevoerd. Een buitenpolikliniek is een locatie van een ziekenhuis waar niet bedlegerige patiënten worden behandeld of gecontroleerd. Patiënten worden er niet voor meer dan 24 uur opgenomen en er worden geen grote operaties uitgevoerd. Bron: CBS Nabijheidsstatistiek, 2014",
+      "type": "number",
+      "stringFormat": "{0:#,#.#}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AJ": {
+      "label": "AJ",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Afstand tot ziekenhuis excl. buitenpoliklinieken (km)",
+      "description": "De gemiddelde afstand van alle inwoners in een gebied tot het dichtstbijzijnde ziekenhuis, berekend over de weg (uitgedrukt in km). Een ziekenhuis is een instelling voor onderzoek, behandeling en verpleging van zieken. In een ziekenhuis kunnen patiënten voor meer dan 24 uur opgenomen worden en er kunnen grote operaties worden uitgevoerd. Een buitenpolikliniek is een locatie van een ziekenhuis waar niet bedlegerige patiënten worden behandeld of gecontroleerd. Patiënten worden er niet voor meer dan 24 uur opgenomen en er worden geen grote operaties uitgevoerd. Bron: CBS Nabijheidsstatistiek, 2014",
+      "type": "number",
+      "stringFormat": "{0:#,#.#}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AK": {
+      "label": "AK",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Afstand tot supermarkt (km)",
+      "description": "De gemiddelde afstand van alle inwoners in een gebied tot de dichtstbijzijnde supermarkt, berekend over de weg (uitgedrukt in km). Een suptermarkt is gedefinieerd als een winkel met meerdere soorten dagelijkse artikelen en een minimale oppervlakte van 150 m2. Bron: CBS Nabijheidsstatistiek, 2015",
+      "type": "number",
+      "stringFormat": "{0:#,#.#}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AL": {
+      "label": "AL",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Afstand tot overige winkel voor dagelijkse levensmiddelen (km)",
+      "description": "De gemiddelde afstand van alle inwoners in een gebied tot de dichtstbijzijnde overige winkels voor dagelijkse levensmiddelen, berekend over de weg (uitgedrukt in km). Overige winkels voor dagelijkse levensmiddelen zijn: groenteboer, bakker, vlaaienwinkel, toko, chocoladewinkel, koffie/theewinkel, delicatessenwinkel, kaaswinkel, mini supermarkt, notenwinkel, poelier, reformwinkel, slagerij, slijterij, tabakswinkel, visboer, zoetwarenwinkel, ziekenhuiswinkel en vrij toegankelijke winkel op kampeerterrein. Bron: CBS Nabijheidsstatistiek, 2015",
+      "type": "number",
+      "stringFormat": "{0:#,#.#}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AM": {
+      "label": "AM",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Afstand tot oprit hoofdverkeersweg (km)",
+      "description": "De gemiddelde afstand van alle inwoners in een gebied tot de dichtstbijzijnde oprit van een rijks- of provinciale weg, berekend over de weg (uitgedrukt in km). Als uitgangspunt voor de opritten is het Nationale Wegenbestand (een product van Adviesdienst Verkeer en Vervoer van het Ministerie van Infrastructuur en Milieu) gebruikt. Bron: CBS Nabijheidsstatistiek, 2015",
+      "type": "number",
+      "stringFormat": "{0:#,#.#}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AN": {
+      "label": "AN",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Afstand tot treinstation (km)",
+      "description": "De gemiddelde afstand van alle inwoners in een gebied tot het dichtstbijzijnde treinstation, berekend over de weg (uitgedrukt in km). Bron: CBS Nabijheidsstatistiek, 2015",
+      "type": "number",
+      "stringFormat": "{0:#,#.#}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AO": {
+      "label": "AO",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Aantal busroutes",
+      "description": "Aantal busroutes in een gebied. Er is een GIS-analyse uitgevoerd om het aantal busroutes per buurt en per wijk vast te stellen. Bron: OpenOV, 2015",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AP": {
+      "label": "AP",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Aantal bushaltes",
+      "description": "Aantal bushaltes in een gebied. Er is een GIS-analyse uitgevoerd om het aantal bushaltes per buurt en per wijk vast te stellen. Bron: OpenOV, 2015",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AQ": {
+      "label": "AQ",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Aantal routes per bushalte",
+      "description": "Gemiddeld aantal busroutes in een gebied.  Er is een GIS-analyse uitgevoegd om de gemiddelde aantallen per buurt en per wijk vast te stellen. Bron: OpenOV, 2015",
+      "type": "number",
+      "stringFormat": "{0:#,#.##}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AR": {
+      "label": "AR",
+      "section": "a. Nabijheid van voorzieningen",
+      "title": "Werkdruk huisartsenzorg (% t.o.v. landelijk)",
+      "description": "Procentuele afwijking van de werkdruk (hoger of lager) huisartsenzorg in de gemeente ten opzichte van het landelijk gemiddelde. De geschatte landelijke werkdruk per FTE huisarts is 10.529 consulten per jaar. Wanneer de werkdruk per FTE huisarts in het gebied hoger of lager ligt, duidt dit op een eventueel tekort of overschot aan FTE huisartsen. Er is per gemeente een berekening gemaakt om de procentuele afwijking (hoger of lager) van de werkdruk per huisarts ten opzichte van het landelijk gemiddelde vast te stellen. Een lager percentage (lagere werkdruk) is beter. Bron: VAAM, 2014 ",
+      "type": "number",
+      "stringFormat": "{0:#,#.##}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AS": {
+      "label": "AS",
+      "section": "b. Sociale context",
+      "title": "Diversiteit woningvoorraad",
+      "description": "Samengestelde dimensie op basis van kenmerken van de woningvoorraad waarvoor op basis van onderzoek aanwijzingen zijn dat die mede bepalend kunnen zijn voor de sociale kwaliteit van de omgeving, zoals bouwperiodes, woningtypes en woninggrootte en eigendomsverhoudingen. De waarde per gemeente is de afwijking t.o.v. het Nederlands gemiddelde, waarbij de schaal van de indexscore loopt van -0,50 tot +0,50. Bron: Leefbaarometer, 2014",
+      "type": "number",
+      "stringFormat": "{0:#,#.##}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AT": {
+      "label": "AT",
+      "section": "b. Sociale context",
+      "title": "Diversiteit bevolkingsopbouw",
+      "description": "Samengestelde dimensie op basis van kenmerken van de bevolking waarvoor op basis van onderzoek aanwijzingen zijn dat die mede bepalend kunnen zijn voor de sociale kwaliteit van de omgeving, zoals huishoudenstypen, leeftijd, arbeidsongeschikten, bijstandsgerechtigden, herkomst en dynamische bevolkingsfactoren als bevolkingskrimp, vergrijzing en ontgroening. De waarde per gemeente is de afwijking t.o.v. het Nederlands gemiddelde, waarbij de schaal van de indexscore loopt van -0,50 tot +0,50. Bron: Leefbaarometer, 2014",
+      "type": "number",
+      "stringFormat": "{0:#,#.##}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AU": {
+      "label": "AU",
+      "section": "b. Sociale context",
+      "title": "Veiligheid",
+      "description": "Samengestelde dimensie op basis van kenmerken van veiligheid waarvoor op basis van onderzoek aanwijzingen zijn dat die mede bepalend kunnen zijn voor de sociale kwaliteit van de omgeving, zoals overlast, ordeverstoringen, vernielingen, geweldsmisdrijven, berovingen en inbraken. De waarde per gemeente is de afwijking t.o.v. het Nederlands gemiddelde, waarbij de schaal van de indexscore loopt van -0,50 tot +0,50. Bron: Leefbaarometer, 2014",
+      "type": "number",
+      "stringFormat": "{0:#,#.##}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AV": {
+      "label": "AV",
+      "section": "b. Sociale context",
+      "title": "Mantelzorg (uren per week)",
+      "description": "Het gemiddelde aantal uren mantelzorg dat een persoon met 1 of meerdere langdurige aandoeningen per week ontvangt (gevens op gemeenteniveau). Er is een berekening gemaakt op basis van het percentage personen dat mantelzorg geeft, het percentage personen dat een of meerdere langdurige aandoeningen heeft of de laatste 12 maanden heeft gehad en het gemiddeld aantal uren mantelzorg dat per week wordt verleend door een mantelzorger. Mantelzorg  is zorg die iemand geeft aan een bekende uit zijn of haar omgeving, zoals een partner, kind of vriend, als deze persoon voor langere tijd ziek, hulpbehoevend of gehandicapt is. De mantelzorg kan bestaan uit het huishouden doen, wassen en aankleden, gezelschap houden, vervoer, geldzaken regelen enzovoort. Mantelzorg wordt niet betaald. Bron: CBS Gezondheidsmonitor, 2012",
+      "type": "number",
+      "stringFormat": "{0:#,#.##}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AW": {
+      "label": "AW",
+      "section": "c. Beweegvriendelijke omgeving",
+      "title": "Kwaliteit fysieke omgeving",
+      "description": "Samengestelde dimensie op basis van kenmerken van de fysieke omgeving waarvoor op basis van onderzoek aanwijzingen zijn dat die mede bepalend kunnen zijn voor de sociale kwaliteit van de omgeving, zoals functies van de gebouwen, nabijheid recreatiegebieden, de infrastructuur, hoogspanningsmasten, windturbines, geluidsoverlast, overstromings- en aardbevingsrisico. De waarde per gemeente is de afwijking t.o.v. het Nederlands gemiddelde, waarbij de schaal van de indexscore loopt van -0,50 tot +0,50. Bron: Leefbaarometer, 2014",
+      "type": "number",
+      "stringFormat": "{0:#,#.##}",
+      "visibleInCallOut": true,
+      "canEdit": true
+    }
+  },
+  "id": "a52fc26d-35a6-4326-43a5-051f9683f23cwoonmileusbuurten"
 }
