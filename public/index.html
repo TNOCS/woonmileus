@@ -52,6 +52,8 @@
 
     <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
     <script src="bower_components/csweb/dist-bower/csComp.js"></script>
+    <script src="widgets/box.js"></script>
+    <script src="widgets/BoxPlot.js"></script>
     <script src="app/app.js"></script>
     <script src="bower_components/csweb/dist-bower/csTemplates.js"></script>
 
@@ -222,7 +224,11 @@
         <input type="text" style="margin-top:10px;float:left" ng-show="sv" />
         <project-header-selection></project-header-selection>
         <dashboard-header-selection></dashboard-header-selection>
-
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="data/projects/MCA/Woonmilieus%20op%20de%20kaart_toelichting.pdf" target="_blank" class="dashboard-selection">Toelichting</a>
+            </li>
+        </ul
     </div>
 
     <div id="bottom-panel">

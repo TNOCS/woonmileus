@@ -24,7 +24,7 @@
         {
           "id": "woonmilieusbuurten",
           "title": "Buurten",
-          "enabled": false,
+          "enabled": true,
           "description": "Woonmilieus geven informatie over de geschiktheid van de woonomgeving voor senioren met functioneringsbeperkingen. De kaartlaag buurten toont de woonmilieus van alle Nederlandse buurten volgens de CBS-indeling. Meerdere buurten kunnen samen een wijk vormen.",
           "dynamicResource": false,
           "defaultFeatureType": "woonmilieusbuurten",
@@ -64,6 +64,20 @@
             "title": "Multi-Criteria Analyse Buurten",
             "layerId": "woonmilieusbuurten",
             "filterByDefaultFeatureType": true
+          }
+        },
+        {
+          "id": "boxplot-widget",
+          "directive": "boxplotwidget",
+          "enabled": true,
+          "width": "700px",
+          "height": "600px",
+          "bottom": "0px",
+          "right": "0px",
+          "data": {
+            "canClose": true,
+            "title": "Box en whisker plot",
+            "layerId": "woonmilieusbuurten"
           }
         },
         {

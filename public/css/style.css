@@ -1,3 +1,46 @@
 .table>thead>tr>th {
     padding: 4px;
 }
+
+#mca {
+    width: 390px;
+}
+
+.box {
+    font-size: 10px;
+}
+
+.box line,
+.box rect,
+.box circle {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.box .center {
+    stroke-dasharray: 3, 3;
+}
+
+.box .outlier {
+    fill: none;
+    stroke: #ccc;
+}
+
+.box .average-dot {
+    fill: yellow;
+    stroke: #bb0;
+}
+
+.box .fence {
+    stroke: #a00;
+    stroke-width: 3px;
+}
+
+.row {
+    margin: 0;
+}
+
+.margin-top {
+    margin-top: 16px;
+}

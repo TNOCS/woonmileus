@@ -1,0 +1,62 @@
+<div data-ng-cloak class="fill-height">
+    <div class="row" ng-hide="data.hideTitle">
+        <h4 class="col-xs-12">
+            {{data.title}}
+        </h4>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form">
+                <form>
+                    <!--<div class="form-group">
+                        <h4>{{'SETTINGS' | translate}}</h4>
+                    </div>-->
+                    <div class="form-group">
+                        <h4 class="margin-top">Selecteer indicator</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="selected-ind">Indicator</label>
+                        <select id="selected-ind" class="form-control" ng-options="vm.flatCriteria.indexOf(crit) as crit.title for crit in vm.flatCriteria"
+                            ng-model="vm.selectedCriterionIndex" ng-change="vm.createCharts()"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zero-val">Score indien onbekend</label>
+                        <select id="zero-val" class="form-control" ng-options="key for (key, val) in vm.unknownValues" ng-model="vm.selectedCriterion.unknownValue"
+                            ng-change="vm.updateMca()"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="limit-val">Limiet waardes</label>
+                        <select id="limit-val" class="form-control" ng-options="key for (key, val) in vm.boundsValues" ng-model="vm.selectedCriterion.boundsValue"
+                            ng-change="vm.updateMca()"></select>
+                    </div>
+                    <div class="form-group">
+                        <h4 class="margin-top">Indicator eigenschappen</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="ind-stats">Aantal OK / onbekend / totaal</label>
+                        <div id="ind-stats" class="form-group text-center">{{featureCount.valid}} / {{featureCount.invalid}} / {{featureCount.total}}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ind-stats">Min. / Max. / Gemiddeld</label>
+                        <div id="ind-stats" class="form-group text-center">{{statsValues.min}} / {{statsValues.max}} / {{statsValues.avg | number:2}}</div>
+                    </div>
+                    <div class="form-group">
+                        <h4 class="margin-top">Indicator scores</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="ind-stats">Min. / Max. / Gemiddeld</label>
+                        <div id="ind-stats" class="form-group text-center">{{statsScores.min | number:2}} / {{statsScores.max | number:2}} / {{statsScores.avg | number:2}}</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div id="boxplotcontainer1">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div id="boxplotcontainer2">
+            </div>
+        </div>
+    </div>
+</div>
