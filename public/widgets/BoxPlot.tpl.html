@@ -1,13 +1,21 @@
-<div data-ng-cloak class="fill-height">
-    <div class="row" ng-hide="data.hideTitle">
-        <h4 class="col-xs-12">
+<div class="fill-height">
+    <div class="row" ng-hide="data.hideTitle" style="height: 45px">
+        <h4 class="col-xs-8">
             {{data.title}}
         </h4>
+        <div class="col-xs-4">
+            <i class="fa fa-question-circle pointer" aria-hidden="true" uib-tooltip="Klik op een outlier in de linker boxplot om de bijbehorende buurt te selecteren.">
+            </i>
+            <span>
+                <button class="btn btn-default small-button" style="margin-left: 12px;">Update MCA<span><i class="fa fa-refresh padding-left" aria-hidden="true"></i></span>
+            </button>
+            </span>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form">
-                <form>
+    <div class="row fill-height" style="padding-bottom: 45px">
+        <div class="col-md-6 fill-height" style="overflow-y:auto;">
+            <div style="height: 90%">
+                <form class="form">
                     <!--<div class="form-group">
                         <h4>{{'SETTINGS' | translate}}</h4>
                     </div>-->
@@ -17,37 +25,72 @@
                     <div class="form-group">
                         <label for="selected-ind">Indicator</label>
                         <select id="selected-ind" class="form-control" ng-options="vm.flatCriteria.indexOf(crit) as crit.title for crit in vm.flatCriteria"
-                            ng-model="vm.selectedCriterionIndex" ng-change="vm.createCharts()"></select>
+                            ng-model="vm.selectedCriterionIndex" ng-change="vm.updateCharts()"></select>
                     </div>
                     <div class="form-group">
-                        <label for="zero-val">Score indien onbekend</label>
-                        <select id="zero-val" class="form-control" ng-options="key for (key, val) in vm.unknownValues" ng-model="vm.selectedCriterion.unknownValue"
+                        <label for="zero-choice">Score indien onbekend</label>
+                        <select id="zero-choice" class="form-control" ng-options="val for (val, key) in vm.unknownValues" ng-model="vm.selectedCriterion.unknownValue"
                             ng-change="vm.updateMca()"></select>
+                        <div class="form-group text-right" ng-if="isNumber(vm.selectedCriterion.unknownValue)">
+                            <label for="zero-val">Aangepaste waarde<span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip="Vul de score in die een buurt met de waarde 'Onbekend' of geen waarde krijgt. De MCA rekent 0 als laagste score en 1 als hoogste score, dus het wordt aangeraden om de score in het bereik [0, 1] te kiezen."></i></span></label>
+                            <div class="row">
+                                <div class="col-xs-offset-7 col-xs-5">
+                                    <input ng-change="vm.updateMca()" ng-model-options='{ debounce: 800 }' type="number" placeholder="" ng-change="adaptCustom()"
+                                        ng-model="vm.selectedCriterion.unknownValue" style="width:100%"></input>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="limit-val">Limiet waardes</label>
-                        <select id="limit-val" class="form-control" ng-options="key for (key, val) in vm.boundsValues" ng-model="vm.selectedCriterion.boundsValue"
+                        <label for="limit-choice">Limiet waardes</label>
+                        <select id="limit-choice" class="form-control" ng-options="key for (key, val) in vm.boundsValues" ng-model="vm.selectedCriterion.boundsValue"
                             ng-change="vm.updateMca()"></select>
+                    </div>
+                    <div class="form-group text-right" ng-show="vm.selectedCriterion.boundsValue === 'none'">
+                        <label for="limit-val">Aangepaste waarde (leeg min./max.)<span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip="Als er in onderstaande vakken niets wordt ingevuld, zal er in de MCA berekeningen de minimum- en maximumwaarde van de data gebruikt worden. Indien er wel waardes worden ingevuld, zullen die waardes als onder- en bovengrens gebruikt worden."></i></span></label>
+                        <div class="row">
+                            <div class="col-xs-offset-2 col-xs-5">
+                                <input ng-change="vm.updateMca()" ng-model-options='{ debounce: 800 }' type="number" placeholder="Min." ng-model="vm.selectedCriterion.minValue"
+                                    style="width:100%"></input>
+                            </div>
+                            <div class="col-xs-5">
+                                <input ng-change="vm.updateMca()" ng-model-options='{ debounce: 800 }' type="number" placeholder="Max." ng-model="vm.selectedCriterion.maxValue"
+                                    style="width:100%"></input>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <h4 class="margin-top">Indicator eigenschappen</h4>
                     </div>
                     <div class="form-group">
                         <label for="ind-stats">Aantal OK / onbekend / totaal</label>
-                        <div id="ind-stats" class="form-group text-center">{{featureCount.valid}} / {{featureCount.invalid}} / {{featureCount.total}}</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="ind-stats">Min. / Max. / Gemiddeld</label>
-                        <div id="ind-stats" class="form-group text-center">{{statsValues.min}} / {{statsValues.max}} / {{statsValues.avg | number:2}}</div>
-                    </div>
-                    <div class="form-group">
-                        <h4 class="margin-top">Indicator scores</h4>
-                    </div>
-                    <div class="form-group">
-                        <label for="ind-stats">Min. / Max. / Gemiddeld</label>
-                        <div id="ind-stats" class="form-group text-center">{{statsScores.min | number:2}} / {{statsScores.max | number:2}} / {{statsScores.avg | number:2}}</div>
+                        <div id="ind-stats" class="form-group">{{featureCount.valid}} / {{featureCount.invalid}} / {{featureCount.total}}</div>
                     </div>
                 </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Min.</th>
+                            <th>Gemidd.</th>
+                            <th>Max.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Waardes</th>
+                            <td>{{statsValues.min | number:2}}</td>
+                            <td>{{statsValues.avg | number:2}}</td>
+                            <td>{{statsValues.max | number:2}}</td>
+                        </tr>
+                        <tr>
+                            <th>Scores</th>
+                            <td>{{statsScores.min | number:2}}</td>
+                            <td>{{statsScores.avg | number:2}}</td>
+                            <td>{{statsScores.max | number:2}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="col-md-3">

@@ -21,6 +21,12 @@
             "borderWidth": 0,
             "background": "transparent"
         },
+        "half-transparent": {
+            "borderWidth": 2,
+            "borderRadius": 4,
+            "opacity": 0.97,
+            "background": "white"
+        },
         "red": {
             "borderWidth": 3,
             "background": "red"

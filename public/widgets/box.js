@@ -159,40 +159,6 @@
                     .attr("y1", x1)
                     .attr("y2", x1);
 
-                // Update average dot.
-                var avgDot = g.selectAll("circle.average")
-                    .data([averageData]);
-
-                avgDot.enter().insert("circle", "text")
-                    .attr("class", "average-dot")
-                    .attr("r", 5)
-                    .attr("cx", width / 2)
-                    .attr("cy", function (i) {
-                        return x0(i);
-                    })
-                    .style("opacity", 1e-6)
-                    .transition()
-                    .duration(duration)
-                    .attr("cy", function (i) {
-                        return x1(i);
-                    })
-                    .style("opacity", 1);
-
-                avgDot.transition()
-                    .duration(duration)
-                    .attr("cy", function (i) {
-                        return x1(i);
-                    })
-                    .style("opacity", 1);
-
-                avgDot.exit().transition()
-                    .duration(duration)
-                    .attr("cy", function (i) {
-                        return x1(i);
-                    })
-                    .style("opacity", 1e-6)
-                    .remove();
-
                 // Update whiskers.
                 var whisker = g.selectAll("line.whisker")
                     .data(whiskerData || []);
@@ -282,7 +248,46 @@
                 outlier.exit().transition()
                     .duration(duration)
                     .attr("cy", function (i) {
-                        return x1(d[i]);
+                        if (i < d.length) {
+                            return x1(d[i]);
+                        } else {
+                            return -9999;
+                        }
+                    })
+                    .style("opacity", 1e-6)
+                    .remove();
+
+
+                // Update average dot.
+                var avgDot = g.selectAll("circle.average-dot")
+                    .data([averageData]);
+
+                avgDot.enter().insert("circle", "text")
+                    .attr("class", "average-dot")
+                    .attr("r", 5)
+                    .attr("cx", width / 2)
+                    .attr("cy", function (i) {
+                        return x0(i);
+                    })
+                    .style("opacity", 1e-6)
+                    .transition()
+                    .duration(duration)
+                    .attr("cy", function (i) {
+                        return x1(i);
+                    })
+                    .style("opacity", 1);
+
+                avgDot.transition()
+                    .duration(duration)
+                    .attr("cy", function (i) {
+                        return x1(i);
+                    })
+                    .style("opacity", 1);
+
+                avgDot.exit().transition()
+                    .duration(duration)
+                    .attr("cy", function (i) {
+                        return x1(i);
                     })
                     .style("opacity", 1e-6)
                     .remove();

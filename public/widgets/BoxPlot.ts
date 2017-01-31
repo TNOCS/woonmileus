@@ -23,6 +23,37 @@ module BoxPlot {
         };
     }]);
 
+    myModule.directive('numbertocustom', () => {
+        return {
+            restrict: 'A',
+            require: 'ngModel',
+            link: (scope, element, attrs, ngModel) => {
+                if (ngModel) {
+                    ngModel.$parsers.push((value) => {
+                        return (1 - (value / 100));
+                    });
+                    ngModel.$formatters.push((value) => {
+                        return ((1 - value) * 100);
+                    });
+                }
+            }
+        };
+    });
+
+    myModule.filter('nonumbers', [function () {
+        return function (object) {
+            let result = {};
+            angular.forEach(object, function (value, key) {
+                if (!isNaN(value)) {
+                    result[key] = 'custom';
+                } else {
+                    result[key] = value;
+                }
+            });
+            return result;
+        };
+    }]);
+
     import McaModel = Mca.Models.Mca;
     import Criterion = Mca.Models.Criterion;
     import Helpers = csComp.Helpers;
@@ -51,6 +82,8 @@ module BoxPlot {
             invalid: number,
             total: number;
         };
+        isNumber: Function;
+        adaptCustom: Function;
     }
 
     export interface BoxPlotData {
@@ -66,20 +99,25 @@ module BoxPlot {
         private parentWidget: JQuery;
         private parentWidgetId: string;
         private mBusHandles: csComp.Services.MessageBusHandle[] = [];
-        private unknownValues: Dictionary < 'zero' | 'half' | 'average' > = {
+        private unknownValues: Dictionary < 'zero' | 'half' | 'average' | number > = {
             'Nul (0)': 'zero',
             'Half (0.5)': 'half',
-            'Gemiddelde': 'average'
+            'Gemiddelde': 'average',
+            'Aangepast': 0
         };
-        private boundsValues: Dictionary < 'none' | 'iqr' | '1.5_iqr' > = {
-            'Geen (min/max van data)': 'none',
+        private boundsValues: Dictionary < 'none' | 'iqr' | '1.5_iqr' | 'custom' > = {
+            'Aangepast (min/max)': 'none',
             'Interkwartiel bereik': 'iqr',
-            '1.5 x interkwartiel bereik': '1.5_iqr'
+            '1.5 x interkwartiel bereik': '1.5_iqr',
+            'Aangepast': 'custom'
         };
         private selectedMca: McaModel;
         private selectedCriterionIndex: number = 0;
         private selectedCriterion: Criterion;
         private flatCriteria: Criterion[] = [];
+
+        private charts: Dictionary < any > = {};
+        private chartSvgs: Dictionary < any > = {};
 
         public static $inject = [
             '$scope',
@@ -114,6 +152,12 @@ module BoxPlot {
             $scope.statsValues = < any > {};
             $scope.statsScores = < any > {};
             $scope.featureCount = < any > {};
+            $scope.isNumber = (nr) => {
+                return typeof nr === 'number';
+            };
+            $scope.adaptCustom = () => {
+                this.unknownValues['Aangepast'] = this.selectedCriterion.unknownValue;
+            };
 
             if (typeof $scope.data.layerId !== 'undefined') {
                 // Hide widget
@@ -149,7 +193,81 @@ module BoxPlot {
 
         private updateMca() {
             this.mcaScope.vm.updateMca();
-            this.createCharts();
+            this.updateCharts();
+        }
+
+        private updateCharts() {
+            this.selectedCriterion = this.flatCriteria[this.selectedCriterionIndex];
+            this.updateChart('boxplotcontainer1', 'value');
+            this.updateChart('boxplotcontainer2', 'score');
+        }
+
+        private updateChart(divId: string, type: string) {
+            if (!divId) return;
+            if (divId.charAt(0) !== '#') divId = '#'.concat(divId);
+            let mca = this.mcaScope.vm.mca;
+            let data = this.getChartData(type);
+
+            var min = Infinity,
+                max = -Infinity;
+
+            if (type === 'value') {
+                min = this.$scope.statsValues.min;
+                max = this.$scope.statsValues.max;
+            } else if (type === 'score') {
+                min = this.$scope.statsScores.min;
+                max = this.$scope.statsScores.max;
+            }
+
+            var axisPadding = 0.1 * (max - min);
+            this.charts[divId].domain([min - axisPadding, max + axisPadding]);
+
+            this.chartSvgs[divId]
+                .datum(_.values(data[0]))
+                .call(this.charts[divId].duration(1000));
+
+            if (type === 'value') {
+                this.chartSvgs[divId].selectAll('circle.outlier')
+                    .on('click', (i, d) => {
+                        if (d3.event.defaultPrevented) return; // click suppressed
+                        this.selectFeatureFromIndex(i, d);
+                    });
+            }
+        }
+
+        private getChartData(type: string): any[][] {
+            let data = [
+                []
+            ];
+            let rows = [];
+            let mca = this.mcaScope.vm.mca;
+            if (type === 'value') {
+                mca.criteria.forEach((c: Criterion) => {
+                    if (c.criteria && c.criteria.length > 0) {
+                        c.criteria.forEach((subc) => {
+                            rows.push(subc._propValues);
+                        });
+                    }
+                });
+                data = [rows[this.selectedCriterionIndex]];
+                this.$scope.statsValues.min = _.min(data[0]);
+                this.$scope.statsValues.max = _.max(data[0]);
+                this.$scope.statsValues.avg = this.getAverage(_.values(data[0]));
+                this.updateFeatureCount(_.size(data[0]));
+            } else if (type === 'score') {
+                mca.criteria.forEach((c: Criterion) => {
+                    if (c.criteria && c.criteria.length > 0) {
+                        c.criteria.forEach((subc) => {
+                            rows.push(subc._scoreVals);
+                        });
+                    }
+                });
+                data = [rows[this.selectedCriterionIndex]];
+                this.$scope.statsScores.min = _.min(data[0]);
+                this.$scope.statsScores.max = _.max(data[0]);
+                this.$scope.statsScores.avg = this.getAverage(_.values(data[0]));
+            }
+            return data;
         }
 
         private createCharts() {
@@ -162,72 +280,60 @@ module BoxPlot {
             if (!divId) return;
             if (divId.charAt(0) !== '#') divId = '#'.concat(divId);
             $(divId).empty();
-            let rows = [];
             let mca = this.mcaScope.vm.mca;
-            let data = [
-                []
-            ];
+            let data = this.getChartData(type);
 
             var min = Infinity,
                 max = -Infinity;
 
             if (type === 'value') {
-                mca.criteria.forEach((c: Criterion) => {
-                    if (c.criteria && c.criteria.length > 0) {
-                        c.criteria.forEach((subc) => {
-                            rows.push(subc._propValues);
-                        });
-                    }
-                });
-                data = [rows[this.selectedCriterionIndex]];
-                min = this.$scope.statsValues.min = _.min(data[0]);
-                max = this.$scope.statsValues.max = _.max(data[0]);
-                this.$scope.statsValues.avg = this.getAverage(data[0]);
-                this.updateFeatureCount(data[0].length);
+                min = this.$scope.statsValues.min;
+                max = this.$scope.statsValues.max;
             } else if (type === 'score') {
-                mca.criteria.forEach((c: Criterion) => {
-                    if (c.criteria && c.criteria.length > 0) {
-                        c.criteria.forEach((subc) => {
-                            rows.push(_.values(subc._scoreVals));
-                        });
-                    }
-                });
-                data = [rows[this.selectedCriterionIndex]];
-                min = this.$scope.statsScores.min = _.min(data[0]);
-                max = this.$scope.statsScores.max = _.max(data[0]);
-                this.$scope.statsScores.avg = this.getAverage(data[0]);
+                min = this.$scope.statsScores.min;
+                max = this.$scope.statsScores.max;
             }
+
             // console.log(JSON.stringify(data[0]));
-
-            let height = this.parentWidget.innerHeight() - 60;
-            let width = Math.min(160, this.parentWidget.innerWidth() / 2);
-
             var margin = {
                 top: 0,
                 right: 40,
                 bottom: 10,
                 left: 40
             };
+            let height = this.parentWidget.innerHeight() - 60;
+            let width = Math.min(140, (this.parentWidget.innerWidth() - 40) / 4);
+
             width = width - margin.left - margin.right;
             height = height - margin.top - margin.bottom;
 
-            var chart = ( < any > d3).box()
+            this.charts[divId] = ( < any > d3).box()
                 .whiskers(iqr(1.5))
                 .width(width)
                 .height(height);
 
             var axisPadding = 0.1 * (max - min);
-            chart.domain([min - axisPadding, max + axisPadding]);
+            this.charts[divId].domain([min - axisPadding, max + axisPadding]);
 
             var svg = d3.select(divId).selectAll('svg')
-                .data(data)
+                .data([_.values(data[0])])
                 .enter().append('svg')
                 .attr('class', 'box')
                 .attr('width', width + margin.left + margin.right)
                 .attr('height', height + margin.bottom + margin.top)
                 .append('g')
                 .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-                .call(chart);
+                .call(this.charts[divId]);
+
+            if (type === 'value') {
+                svg.selectAll('circle.outlier')
+                    .on('click', (i, d) => {
+                        if (d3.event.defaultPrevented) return; // click suppressed
+                        this.selectFeatureFromIndex(i, d);
+                    });
+            }
+
+            this.chartSvgs[divId] = svg;
 
             // Returns a function to compute the interquartile range.
             function iqr(k) {
@@ -242,6 +348,16 @@ module BoxPlot {
                     return [i, j];
                 };
             }
+        }
+
+        private selectFeatureFromIndex(index: number, data: any) {
+            console.log(index);
+            let valueAtIndex = _.values(this.selectedCriterion._propValues).sort()[index];
+            let featureId = _.findKey(this.selectedCriterion._propValues, (val, key) => {
+                return valueAtIndex === val;
+            });
+            let f = this.$layerService.findFeatureById(featureId);
+            if (f) this.$layerService.selectFeature(f);
         }
 
         private updateFeatureCount(numberOfValidItems: number) {

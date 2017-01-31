@@ -47,7 +47,7 @@
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
     "socket.io": "registry:dt/socket.io#1.4.4+20160317120654",
     "sqlite3": "registry:dt/sqlite3#2.2.3+20160724070935",
-    "underscore": "registry:dt/underscore#1.7.0+20160805164035",
+    "underscore": "registry:dt/underscore#1.8.3+20161123125004",
     "vega": "registry:dt/vega#0.0.0+20160316155526",
     "webshot": "github:rinzeb/DefinitelyTyped/webshot/webshot.d.ts#681d6bb905ff2aa90f8373904697ac35e15131e1",
     "winston": "registry:dt/winston#0.0.0+20160417152829",

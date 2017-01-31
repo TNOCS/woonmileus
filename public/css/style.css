@@ -44,3 +44,34 @@
 .margin-top {
     margin-top: 16px;
 }
+
+label {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+.form-control {
+    height: 30px;
+    font-size: 13px;
+    padding: 3px 6px;
+}
+
+td, th {
+    padding: 4px 8px;
+}
+
+tr {
+    border: 1px solid grey;
+}
+
+.tooltip {
+    width: 200px;
+}
+
+.fill-height {
+    height: 100%;
+}
+
+.padding-left {
+    padding-left: 12px;
+}
