@@ -20,9 +20,6 @@
                         <h4>{{'SETTINGS' | translate}}</h4>
                     </div>-->
                     <div class="form-group">
-                        <h4 class="margin-top">Selecteer indicator</h4>
-                    </div>
-                    <div class="form-group">
                         <label for="selected-ind">Indicator</label>
                         <select id="selected-ind" class="form-control" ng-options="vm.flatCriteria.indexOf(crit) as crit.title for crit in vm.flatCriteria"
                             ng-model="vm.selectedCriterionIndex" ng-change="vm.updateCharts()"></select>
@@ -43,10 +40,10 @@
                     </div>
                     <div class="form-group">
                         <label for="limit-choice">Limiet waardes</label>
-                        <select id="limit-choice" class="form-control" ng-options="key for (key, val) in vm.boundsValues" ng-model="vm.selectedCriterion.boundsValue"
+                        <select id="limit-choice" class="form-control" ng-options="key for (key, val) in vm.boundsValues" ng-model="vm.selectedCriterion.dynamicBoundsValue"
                             ng-change="vm.updateMca()"></select>
                     </div>
-                    <div class="form-group text-right" ng-show="vm.selectedCriterion.boundsValue === 'none'">
+                    <div class="form-group text-right" ng-show="vm.selectedCriterion.dynamicBoundsValue === 'none'">
                         <label for="limit-val">Aangepaste waarde (leeg min./max.)<span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip="Als er in onderstaande vakken niets wordt ingevuld, zal er in de MCA berekeningen de minimum- en maximumwaarde van de data gebruikt worden. Indien er wel waardes worden ingevuld, zullen die waardes als onder- en bovengrens gebruikt worden."></i></span></label>
                         <div class="row">
                             <div class="col-xs-offset-2 col-xs-5">
@@ -58,6 +55,13 @@
                                     style="width:100%"></input>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default btn-xs" ng-click="vm.applyToAllIndicators()"><i class="fa fa-magic padding-right" aria-hidden="true"></i><span>Toepassen op alle indicatoren</span>
+                        </button>
+                        <span style="margin-left: 12px">
+                            <i class="fa fa-question-circle pointer" aria-hidden="true" uib-tooltip="Past de waardes 'Score indien onbekend' en de 'Limiet waardes' van de huidige indicator toe op alle indicatoren."></i>
+                        </span>
                     </div>
                     <div class="form-group">
                         <h4 class="margin-top">Indicator eigenschappen</h4>

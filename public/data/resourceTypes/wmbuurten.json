@@ -1,0 +1,165 @@
+{
+  "featureTypes": {
+    "wmbuurten": {
+      "name": "wmbuurten",
+      "style": {
+        "iconUri": "data/images/Pasted image at 2016_04_04 05_28 PMwm.png",
+        "iconWidth": 24,
+        "iconHeight": 24,
+        "stroke": true,
+        "strokeWidth": 1,
+        "strokeColor": "#000000",
+        "selectedStrokeColor": "#0000FF",
+        "fillColor": "#FF8800",
+        "opacity": 1,
+        "fillOpacity": 1,
+        "nameLabel": "Buurtnaam"
+      },
+      "contourProperty": "_bag_contour",
+      "propertyTypeKeys": "Buurtnaam;Buurtcode;AC;AD;AE;AF;AG;AH;AI;AJ;AK;AL;AM;AN;AO;AP;AQ;AR;AS;AT;"
+    }
+  },
+  "propertyTypeData": {
+    "Buurtnaam": {
+      "label": "Buurtnaam",
+      "title": "Buurtnaam",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "Buurtcode": {
+      "label": "Buurtcode",
+      "title": "Buurtcode",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AC": {
+      "label": "AC",
+      "title": "Gemeentenaam",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AD": {
+      "label": "AD",
+      "title": "Gemeentecode",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AE": {
+      "label": "AE",
+      "title": "Wijknaam",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AF": {
+      "label": "AF",
+      "title": "Wijkcode",
+      "type": "text",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AG": {
+      "label": "AG",
+      "title": "Afstand tot huisartsenpraktijk",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AH": {
+      "label": "AH",
+      "title": "Afstand tot apotheek",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AI": {
+      "label": "AI",
+      "title": "Afstand tot ziekenhuis (incl. buitenpoliklinieken)",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AJ": {
+      "label": "AJ",
+      "title": "Afstand tot ziekenhuis (excl. buitenpoliklinieken)",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AK": {
+      "label": "AK",
+      "title": "Afstand tot supermarkt",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AL": {
+      "label": "AL",
+      "title": "Afstand tot overige winkel voor dagelijkse levensmiddelen",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AM": {
+      "label": "AM",
+      "title": "Afstand tot treinstation",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AN": {
+      "label": "AN",
+      "title": "Aantal bushaltes per ha",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AO": {
+      "label": "AO",
+      "title": "Diversiteit woningvoorraad",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AP": {
+      "label": "AP",
+      "title": "Diversiteit bevolkingsopbouw",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AQ": {
+      "label": "AQ",
+      "title": "Veiligheid",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AR": {
+      "label": "AR",
+      "title": "Kwaliteit fysieke omgeving",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AS": {
+      "label": "AS",
+      "title": "Werkdruk huisartsenzorg",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    },
+    "AT": {
+      "label": "AT",
+      "title": "Aantal uren mantelzorg",
+      "type": "number",
+      "visibleInCallOut": true,
+      "canEdit": true
+    }
+  },
+  "id": "wmwoonmileusbuurten"
+}

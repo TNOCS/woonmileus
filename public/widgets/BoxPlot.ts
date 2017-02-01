@@ -105,11 +105,10 @@ module BoxPlot {
             'Gemiddelde': 'average',
             'Aangepast': 0
         };
-        private boundsValues: Dictionary < 'none' | 'iqr' | '1.5_iqr' | 'custom' > = {
+        private boundsValues: Dictionary < 'none' | '1.5_iqr' | '3_iqr' > = {
             'Aangepast (min/max)': 'none',
-            'Interkwartiel bereik': 'iqr',
-            '1.5 x interkwartiel bereik': '1.5_iqr',
-            'Aangepast': 'custom'
+            '1.5x interkwartiel bereik': '1.5_iqr',
+            '3x interkwartiel bereik': '3_iqr'
         };
         private selectedMca: McaModel;
         private selectedCriterionIndex: number = 0;
@@ -348,6 +347,32 @@ module BoxPlot {
                     return [i, j];
                 };
             }
+        }
+
+        private applyToAllIndicators() {
+            let unknownValue = this.selectedCriterion.unknownValue;
+            let dynamicBoundsValue = this.selectedCriterion.dynamicBoundsValue;
+            this.applyUnknownValue(this.selectedMca.criteria, unknownValue);
+            this.applyDynamicBoundsValue(this.selectedMca.criteria, dynamicBoundsValue);
+            this.updateMca();
+        }
+
+        private applyUnknownValue(criteria: Criterion[], unknownValue) {
+            criteria.forEach((crit) => {
+                crit.unknownValue = unknownValue;
+                if (crit.criteria && crit.criteria.length > 0) {
+                    this.applyUnknownValue(crit.criteria, unknownValue);
+                }
+            });
+        }
+
+        private applyDynamicBoundsValue(criteria: Criterion[], dynamicBoundsValue) {
+            criteria.forEach((crit) => {
+                crit.dynamicBoundsValue = dynamicBoundsValue;
+                if (crit.criteria && crit.criteria.length > 0) {
+                    this.applyDynamicBoundsValue(crit.criteria, dynamicBoundsValue);
+                }
+            });
         }
 
         private selectFeatureFromIndex(index: number, data: any) {
