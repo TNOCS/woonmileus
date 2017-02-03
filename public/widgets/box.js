@@ -5,6 +5,7 @@
         var width = 1,
             height = 1,
             duration = 0,
+            title = '',
             domain = null,
             value = Number,
             whiskers = boxWhiskers,
@@ -60,6 +61,17 @@
                 // so we only have to handle enter and update. In contrast, the outliers
                 // and other elements are variable, so we need to exit them! Variable
                 // elements also fade in and out.
+
+                var caption = d3.select(g.node().parentNode).selectAll("text.title")
+                    .data([title]);
+
+                caption.enter().insert("text", "rect")
+                    .attr("class", "title")
+                    .attr("x", 0)
+                    .attr("y", 12)
+                    .style("font-size", "12px")
+                    .style("font-weight", "bold")
+                    .text(title);
 
                 // Update center line: the vertical line spanning the whiskers.
                 var center = g.selectAll("line.center")
@@ -365,6 +377,12 @@
         box.height = function (x) {
             if (!arguments.length) return height;
             height = x;
+            return box;
+        };
+
+        box.title = function (x) {
+            if (!arguments.length) return title;
+            title = x;
             return box;
         };
 

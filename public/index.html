@@ -178,7 +178,7 @@
                         <base-map-list class="tab-pane" id="basestyles"></base-map-list>
                         <layers-directive class="tab-pane active" id="layers"></layers-directive>
                         <filter-list ng-hide="vm.$layerService.noFilters" class="tab-pane" id="filters"></filter-list>
-                        <style-list class="tab-pane" id="styles"></style-list>
+                        .<style-list class="tab-pane" id="styles"></style-list>
                         <mca class="tab-pane" id="mca" ng-show="vm.$layerService.project.mcas"></mca>
                         <dashboard-selection class="tab-pane" id="dashboardselection"></dashboard-selection>
                         <project-settings class="tab-pane" id="settings"></project-settings>
@@ -193,7 +193,7 @@
         <div id="rightpanelTabContainer" class="tabbable tabs-left rightpanelContainer">
             <!-- Nav tabs -->
             <ul id="rightpanelTabs" class="nav nav-tabs rightpanelTabs" ng-class="{'rightpanelTabs-collapsed' : !vm.$layerService.visual.rightPanelVisible}">
-                <li style="margin-top:5px" ng-style="!vm.$layerService.visual.rightPanelVisible && {'opacity':0}" ng-click="vm.$layerService.visual.rightPanelVisible = false" uib-popover="{{'HIDE_PANEL' | translate}}" popover-placement="left" popover-trigger="mouseenter"
+                <li style="margin-top:5px" ng-style="!vm.$layerService.visual.rightPanelVisible && {'opacity':0}" ng-click="vm.$layerService.visual.rightPanelVisible = false" uib-popover="{{'HIDE_PANEL' | translate}}" popover-placement="left" popover-trigger="'mouseenter'"
                     popover-append-to-body="true">
                     <a class="rightpanel-hidetab">
                         <span class="fa fa-2x fa-chevron-right"></span>
@@ -215,7 +215,7 @@
     </div>
 
 
-    <div id="header-box" class="header-box">
+    <div id="header-box" class="header-box" resize>
         <a class="menutoggle" style="color:black" ng-click="vm.$layerService.visual.leftPanelVisible = !vm.$layerService.visual.leftPanelVisible">
             <i class="fa fa-bars"></i>
         </a>

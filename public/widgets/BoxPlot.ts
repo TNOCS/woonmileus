@@ -77,6 +77,11 @@ module BoxPlot {
             max: number,
             avg: number
         };
+        statsTotal: {
+            min: number,
+            max: number,
+            avg: number
+        };
         featureCount: {
             valid: number,
             invalid: number,
@@ -84,6 +89,9 @@ module BoxPlot {
         };
         isNumber: Function;
         adaptCustom: Function;
+        loadingSpinners: {
+            mca: boolean;
+        };
     }
 
     export interface BoxPlotData {
@@ -150,12 +158,16 @@ module BoxPlot {
             $scope.data = < BoxPlotData > this.widget.data || < BoxPlotData > {};
             $scope.statsValues = < any > {};
             $scope.statsScores = < any > {};
+            $scope.statsTotal = < any > {};
             $scope.featureCount = < any > {};
             $scope.isNumber = (nr) => {
                 return typeof nr === 'number';
             };
             $scope.adaptCustom = () => {
                 this.unknownValues['Aangepast'] = this.selectedCriterion.unknownValue;
+            };
+            $scope.loadingSpinners = {
+                mca: false
             };
 
             if (typeof $scope.data.layerId !== 'undefined') {
@@ -190,15 +202,26 @@ module BoxPlot {
             }
         }
 
+        private toggleSpinner(key: string, enable: boolean) {
+            this.$timeout(() => {
+                this.$scope.loadingSpinners[key] = enable;
+            }, 0, true);
+        }
+
         private updateMca() {
-            this.mcaScope.vm.updateMca();
-            this.updateCharts();
+            this.toggleSpinner('mca', true);
+            this.$timeout(() => {
+                this.mcaScope.vm.updateMca();
+                this.updateCharts();
+                this.toggleSpinner('mca', false);
+            }, 100);
         }
 
         private updateCharts() {
             this.selectedCriterion = this.flatCriteria[this.selectedCriterionIndex];
             this.updateChart('boxplotcontainer1', 'value');
             this.updateChart('boxplotcontainer2', 'score');
+            this.updateChart('boxplotcontainer3', 'total');
         }
 
         private updateChart(divId: string, type: string) {
@@ -216,6 +239,9 @@ module BoxPlot {
             } else if (type === 'score') {
                 min = this.$scope.statsScores.min;
                 max = this.$scope.statsScores.max;
+            } else if (type === 'total') {
+                min = this.$scope.statsTotal.min;
+                max = this.$scope.statsTotal.max;
             }
 
             var axisPadding = 0.1 * (max - min);
@@ -229,7 +255,13 @@ module BoxPlot {
                 this.chartSvgs[divId].selectAll('circle.outlier')
                     .on('click', (i, d) => {
                         if (d3.event.defaultPrevented) return; // click suppressed
-                        this.selectFeatureFromIndex(i, d);
+                        this.selectFeatureFromIndicatorValue(i, d);
+                    });
+            } else if (type === 'total') {
+                this.chartSvgs[divId].selectAll('circle.outlier')
+                    .on('click', (i, d) => {
+                        if (d3.event.defaultPrevented) return; // click suppressed
+                        this.selectFeatureFromTotalScore(i, d);
                     });
             }
         }
@@ -265,17 +297,44 @@ module BoxPlot {
                 this.$scope.statsScores.min = _.min(data[0]);
                 this.$scope.statsScores.max = _.max(data[0]);
                 this.$scope.statsScores.avg = this.getAverage(_.values(data[0]));
+            } else if (type === 'total') {
+                rows = this.getFeatureValues(mca.label);
+                data = [rows];
+                this.$scope.statsTotal.min = _.min(rows);
+                this.$scope.statsTotal.max = _.max(rows);
+                this.$scope.statsTotal.avg = this.getAverage(rows);
             }
             return data;
         }
 
-        private createCharts() {
-            this.selectedCriterion = this.flatCriteria[this.selectedCriterionIndex];
-            this.createChart('boxplotcontainer1', 'value');
-            this.createChart('boxplotcontainer2', 'score');
+        private getFeatureValues(label: string): any[] {
+            let rows = [];
+            this.mcaScope.vm.features.forEach((f) => {
+                if (f.properties.hasOwnProperty(label)) {
+                    rows.push(f.properties[label]);
+                }
+            });
+            return rows;
         }
 
-        private createChart(divId: string, type: string) {
+        private getFeaturesHavingLabel(label: string): IFeature[] {
+            let fts = [];
+            this.mcaScope.vm.features.forEach((f) => {
+                if (f.properties.hasOwnProperty(label)) {
+                    fts.push(f);
+                }
+            });
+            return fts;
+        }
+
+        private createCharts() {
+            this.selectedCriterion = this.flatCriteria[this.selectedCriterionIndex];
+            this.createChart('boxplotcontainer1', 'Indicator waardes', 'value');
+            this.createChart('boxplotcontainer2', 'Indicator scores', 'score');
+            this.createChart('boxplotcontainer3', 'Totale MCA scores', 'total');
+        }
+
+        private createChart(divId: string, title: string, type: string) {
             if (!divId) return;
             if (divId.charAt(0) !== '#') divId = '#'.concat(divId);
             $(divId).empty();
@@ -291,13 +350,16 @@ module BoxPlot {
             } else if (type === 'score') {
                 min = this.$scope.statsScores.min;
                 max = this.$scope.statsScores.max;
+            } else if (type === 'total') {
+                min = this.$scope.statsTotal.min;
+                max = this.$scope.statsTotal.max;
             }
 
             // console.log(JSON.stringify(data[0]));
             var margin = {
-                top: 0,
+                top: 10,
                 right: 40,
-                bottom: 10,
+                bottom: 0,
                 left: 40
             };
             let height = this.parentWidget.innerHeight() - 60;
@@ -309,7 +371,8 @@ module BoxPlot {
             this.charts[divId] = ( < any > d3).box()
                 .whiskers(iqr(1.5))
                 .width(width)
-                .height(height);
+                .height(height)
+                .title(title);
 
             var axisPadding = 0.1 * (max - min);
             this.charts[divId].domain([min - axisPadding, max + axisPadding]);
@@ -328,7 +391,13 @@ module BoxPlot {
                 svg.selectAll('circle.outlier')
                     .on('click', (i, d) => {
                         if (d3.event.defaultPrevented) return; // click suppressed
-                        this.selectFeatureFromIndex(i, d);
+                        this.selectFeatureFromIndicatorValue(i, d);
+                    });
+            } else if (type === 'total') {
+                svg.selectAll('circle.outlier')
+                    .on('click', (i, d) => {
+                        if (d3.event.defaultPrevented) return; // click suppressed
+                        this.selectFeatureFromTotalScore(i, d);
                     });
             }
 
@@ -375,13 +444,19 @@ module BoxPlot {
             });
         }
 
-        private selectFeatureFromIndex(index: number, data: any) {
-            console.log(index);
+        private selectFeatureFromIndicatorValue(index: number, data: any) {
             let valueAtIndex = _.values(this.selectedCriterion._propValues).sort()[index];
             let featureId = _.findKey(this.selectedCriterion._propValues, (val, key) => {
                 return valueAtIndex === val;
             });
             let f = this.$layerService.findFeatureById(featureId);
+            if (f) this.$layerService.selectFeature(f);
+        }
+
+        private selectFeatureFromTotalScore(index: number, data: any) {
+            let mca = this.selectedMca;
+            let c = 0;
+            let f = this.getFeaturesHavingLabel(mca.label)[index];
             if (f) this.$layerService.selectFeature(f);
         }
 
