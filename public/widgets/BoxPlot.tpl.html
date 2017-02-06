@@ -72,7 +72,7 @@
                             <i class="fa fa-question-circle pointer" aria-hidden="true" uib-tooltip="Past de waardes 'Score indien onbekend' en de 'Limiet waardes' van de huidige indicator toe op alle indicatoren."></i>
                         </span>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group no-margin">
                         <h4 class="margin-top">Indicator eigenschappen</h4>
                     </div>
                     <div class="form-group">
@@ -104,6 +104,12 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="small-padding margin-top">
+                    <label for="weight-ind">Indicator weging: </label>
+                    <span id="weight-ind" class="textlabel small-padding" ng-class="{'inverse': vm.selectedCriterion.userWeight < 0}">{{vm.selectedCriterion.userWeight}}
+                    </span>
+                    <span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip="Een negatieve weging betekent dat de behaalde score hoger wordt naarmate waarde van de betreffende indicator daalt."></i></span>
+                </div>
             </div>
         </div>
         <div class="col-md-7 no-margin">

@@ -81,8 +81,22 @@ tr {
     padding-right: 12px;
 }
 
+.small-padding {
+    padding: 4px;
+}
+
 .no-margin {
     margin: 0;
+}
+
+.textlabel {
+    border-radius: 2px;
+    background: lightblue;
+    padding: 4px 12px 4px 12px;
+}
+
+.textlabel.inverse {
+    background: lightcoral;
 }
 
 .loader {

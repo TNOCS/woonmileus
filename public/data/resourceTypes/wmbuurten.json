@@ -115,6 +115,7 @@
       "label": "AN",
       "title": "Aantal bushaltes per ha",
       "type": "number",
+      "stringFormat": "{0:#,#.####}",
       "visibleInCallOut": true,
       "canEdit": true
     },
@@ -122,6 +123,7 @@
       "label": "AO",
       "title": "Diversiteit woningvoorraad",
       "type": "number",
+      "stringFormat": "{0:#,#.##}",
       "visibleInCallOut": true,
       "canEdit": true
     },
@@ -129,6 +131,7 @@
       "label": "AP",
       "title": "Diversiteit bevolkingsopbouw",
       "type": "number",
+      "stringFormat": "{0:#,#.##}",
       "visibleInCallOut": true,
       "canEdit": true
     },
@@ -136,6 +139,7 @@
       "label": "AQ",
       "title": "Veiligheid",
       "type": "number",
+      "stringFormat": "{0:#,#.##}",
       "visibleInCallOut": true,
       "canEdit": true
     },
@@ -143,6 +147,7 @@
       "label": "AR",
       "title": "Kwaliteit fysieke omgeving",
       "type": "number",
+      "stringFormat": "{0:#,#.##}",
       "visibleInCallOut": true,
       "canEdit": true
     },
@@ -150,6 +155,7 @@
       "label": "AS",
       "title": "Werkdruk huisartsenzorg",
       "type": "number",
+      "stringFormat": "{0:#,#.##}",
       "visibleInCallOut": true,
       "canEdit": true
     },
@@ -157,6 +163,7 @@
       "label": "AT",
       "title": "Aantal uren mantelzorg",
       "type": "number",
+      "stringFormat": "{0:#,#.##}",
       "visibleInCallOut": true,
       "canEdit": true
     }

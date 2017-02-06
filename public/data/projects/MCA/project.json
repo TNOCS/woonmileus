@@ -31,8 +31,8 @@
       "localStorage": false,
       "type": "topojson",
       "storage": "file",
-      "url": "data/layers/wmbuurten.min.topojson",
       "url": "data/layers/wmbuurten2.min.topojson",
+      "url": "data/layers/wmbuurten.min.topojson",
       "isDynamic": false
     }]
   }],
@@ -340,6 +340,7 @@
       "data/resourceTypes/wmbuurten.json#wmbuurten"
     ],
     "stringFormat": "{0:0.0}",
+    "legendType": "dynamic",
     "legend": {
       "id": "mca_FP1",
       "description": "Functioneringsprofiel 1",
@@ -650,6 +651,7 @@
       "data/resourceTypes/wmbuurten.json#wmbuurten"
     ],
     "stringFormat": "{0:0.0}",
+    "legendType": "dynamic",
     "legend": {
       "id": "profiel2",
       "description": "Functioneringsprofiel 2",
@@ -960,6 +962,7 @@
       "data/resourceTypes/wmbuurten.json#wmbuurten"
     ],
     "stringFormat": "{0:0.0}",
+    "legendType": "dynamic",
     "legend": {
       "id": "profiel4",
       "description": "Functioneringsprofiel 4",
@@ -1270,6 +1273,7 @@
       "data/resourceTypes/wmbuurten.json#wmbuurten"
     ],
     "stringFormat": "{0:0.0}",
+    "legendType": "dynamic",
     "legend": {
       "id": "profiel3",
       "description": "Functioneringsprofiel 3",

@@ -190,7 +190,7 @@ module BoxPlot {
                     switch (action) {
                         case 'updated':
                         case 'deactivate':
-                            this.updateMca();
+                            this.updateCharts();
                             break;
                         default:
                             break;
@@ -232,6 +232,7 @@ module BoxPlot {
         }
 
         private updateCharts() {
+            if (!this.flatCriteria || this.flatCriteria.length < this.selectedCriterionIndex) return;
             this.selectedCriterion = this.flatCriteria[this.selectedCriterionIndex];
             this.updateChart('boxplotcontainer1', 'value');
             this.updateChart('boxplotcontainer2', 'score');
@@ -241,6 +242,7 @@ module BoxPlot {
         private updateChart(divId: string, type: string) {
             if (!divId) return;
             if (divId.charAt(0) !== '#') divId = '#'.concat(divId);
+            if (!this.chartSvgs || !this.chartSvgs.hasOwnProperty(divId)) return;
             let mca = this.mcaScope.vm.mca;
             let data = this.getChartData(type);
 
@@ -303,7 +305,11 @@ module BoxPlot {
                 mca.criteria.forEach((c: Criterion) => {
                     if (c.criteria && c.criteria.length > 0) {
                         c.criteria.forEach((subc) => {
-                            rows.push(subc._scoreVals);
+                            if (subc.weight < 0) {
+                                rows.push(this.getInverseScores(subc._scoreVals));
+                            } else {
+                                rows.push(subc._scoreVals);
+                            }
                         });
                     }
                 });
@@ -339,6 +345,12 @@ module BoxPlot {
                 }
             });
             return fts;
+        }
+
+        private getInverseScores(scores: Dictionary < any > ):  Dictionary < any > {
+            return _.map(scores, (val, key) => {
+                return 1 - val;
+            });
         }
 
         private createCharts() {
