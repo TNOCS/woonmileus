@@ -99,6 +99,7 @@ module BoxPlot {
         title: string;
         hideTitle: boolean;
         canMinimize: boolean;
+        autoUpdate: boolean;
     }
 
     export class BoxPlotCtrl {
@@ -185,6 +186,17 @@ module BoxPlot {
                     }
                 }));
 
+                this.mBusHandles.push(this.$messageBus.subscribe('mca', (action: string, mca: Mca.Models.Mca) => {
+                    switch (action) {
+                        case 'updated':
+                        case 'deactivate':
+                            this.updateMca();
+                            break;
+                        default:
+                            break;
+                    }
+                }));
+
                 // Activate widget when layer is already loaded
                 let l = this.$layerService.findLoadedLayer($scope.data.layerId);
                 if (l) {
@@ -208,13 +220,15 @@ module BoxPlot {
             }, 0, true);
         }
 
-        private updateMca() {
-            this.toggleSpinner('mca', true);
-            this.$timeout(() => {
-                this.mcaScope.vm.updateMca();
-                this.updateCharts();
-                this.toggleSpinner('mca', false);
-            }, 100);
+        private updateMca(forceUpdate: boolean = false) {
+            if (forceUpdate || this.$scope.data.autoUpdate) {
+                this.toggleSpinner('mca', true);
+                this.$timeout(() => {
+                    this.mcaScope.vm.updateMca();
+                    this.updateCharts();
+                    this.toggleSpinner('mca', false);
+                }, 100);
+            }
         }
 
         private updateCharts() {
@@ -423,7 +437,7 @@ module BoxPlot {
             let dynamicBoundsValue = this.selectedCriterion.dynamicBoundsValue;
             this.applyUnknownValue(this.selectedMca.criteria, unknownValue);
             this.applyDynamicBoundsValue(this.selectedMca.criteria, dynamicBoundsValue);
-            this.updateMca();
+            this.updateMca(true);
         }
 
         private applyUnknownValue(criteria: Criterion[], unknownValue) {

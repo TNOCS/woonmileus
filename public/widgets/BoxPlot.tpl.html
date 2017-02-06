@@ -1,13 +1,17 @@
 <div class="fill-height">
     <div class="row" ng-hide="data.hideTitle" style="height: 45px">
-        <h4 class="col-xs-7">
+        <h4 class="col-xs-5">
             {{data.title}}
-        </h4>
-        <div class="col-xs-4">
-            <i class="fa fa-question-circle pointer" aria-hidden="true" uib-tooltip="Klik op een outlier in de linker boxplot om de bijbehorende buurt te selecteren.">
-            </i>
             <span>
-                <button class="btn btn-default small-button" style="margin-left: 12px;">Update MCA<span><i class="fa fa-refresh padding-left" aria-hidden="true"></i></span>
+                <i class="fa fa-question-circle pointer" aria-hidden="true" style="margin-left: 12px;" uib-tooltip="Klik op een outlier in de linker boxplot om de bijbehorende buurt te selecteren.">
+                </i>
+            </span>
+        </h4>
+        <div class="col-xs-6">
+            <label>Auto-update</label>
+            <input type="checkbox" id="autoupdate" ng-model="data.autoUpdate"></select>
+            <span>
+                <button class="btn btn-default small-button" style="margin-left: 12px;" ng-click="vm.updateMca(true)">Update MCA<span><i class="fa fa-refresh padding-left" aria-hidden="true"></i></span>
             </button>
             </span>
         </div>

@@ -31,8 +31,8 @@
       "localStorage": false,
       "type": "topojson",
       "storage": "file",
-      "url": "data/layers/wmbuurten2.min.topojson",
       "url": "data/layers/wmbuurten.min.topojson",
+      "url": "data/layers/wmbuurten2.min.topojson",
       "isDynamic": false
     }]
   }],
@@ -75,7 +75,8 @@
       "data": {
         "canClose": true,
         "title": "Box en whisker plot",
-        "layerId": "woonmilieusbuurten"
+        "layerId": "woonmilieusbuurten",
+        "autoUpdate": true
       }
     }, {
       "id": "vergelijk-widget",
@@ -115,155 +116,183 @@
   "mcas": [{
     "userWeight": 1,
     "criteria": [{
-      "userWeight": 1,
+      "userWeight": 2,
       "criteria": [{
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AG",
         "title": "Afstand tot huisartsenpraktijk",
-        "scores": "[0,0 10,1]",
+        "label": "AG",
+        "color": "#40004b",
         "weight": -0.16666666666666666,
-        "color": "#40004b"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AH",
         "title": "Afstand tot apotheek",
-        "scores": "[0,0 10,1]",
+        "label": "AH",
+        "color": "#692076",
         "weight": -0.16666666666666666,
-        "color": "#692076"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AI",
         "title": "Afstand tot ziekenhuis (incl. buitenpoliklinieken)",
-        "scores": "[0,0 10,1]",
+        "label": "AI",
+        "color": "#884f98",
         "weight": -0.1111111111111111,
-        "color": "#884f98"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AJ",
         "title": "Afstand tot ziekenhuis (excl. buitenpoliklinieken)",
-        "scores": "[0,0 10,1]",
+        "label": "AJ",
+        "color": "#a580b6",
         "weight": -0.1111111111111111,
-        "color": "#a580b6"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AK",
         "title": "Afstand tot supermarkt",
-        "scores": "[0,0 10,1]",
+        "label": "AK",
+        "color": "#c4a8d0",
         "weight": -0.16666666666666666,
-        "color": "#c4a8d0"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AL",
         "title": "Afstand tot overige winkel voor dagelijkse levensmiddelen",
-        "scores": "[0,0 10,1]",
+        "label": "AL",
+        "color": "#e1cce4",
         "weight": -0.16666666666666666,
-        "color": "#e1cce4"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AM",
         "title": "Afstand tot treinstation",
-        "scores": "[0,0 10,1]",
+        "label": "AM",
+        "color": "#f0e9f1",
         "weight": -0.05555555555555555,
-        "color": "#f0e9f1"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AN",
         "title": "Aantal bushaltes per ha",
-        "scores": "[0,0 10,1]",
+        "label": "AN",
+        "color": "#ebf4e9",
         "weight": 0.05555555555555555,
-        "color": "#ebf4e9"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "A",
-      "weight": 0.3333333333333333,
-      "color": "#a50026"
+      "color": "#a50026",
+      "weight": 0.2857142857142857,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }, {
-      "userWeight": 1,
+      "userWeight": 4,
       "criteria": [{
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AO",
         "title": "Diversiteit woningvoorraad",
-        "scores": "[0,0 10,1]",
+        "label": "AO",
+        "color": "#d1eccb",
         "weight": 0.16666666666666666,
-        "color": "#d1eccb"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AP",
         "title": "Diversiteit bevolkingsopbouw",
-        "scores": "[0,0 10,1]",
+        "label": "AP",
+        "color": "#a9dca3",
         "weight": 0.3333333333333333,
-        "color": "#a9dca3"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AQ",
         "title": "Veiligheid",
-        "scores": "[0,0 10,1]",
+        "label": "AQ",
+        "color": "#71bb74",
         "weight": 0.3333333333333333,
-        "color": "#71bb74"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AR",
         "title": "Kwaliteit fysieke omgeving",
-        "scores": "[0,0 10,1]",
+        "label": "AR",
+        "color": "#3c954d",
         "weight": 0.16666666666666666,
-        "color": "#3c954d"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "B",
-      "weight": 0.3333333333333333,
-      "color": "#ffffbf"
+      "color": "#ffffbf",
+      "weight": 0.5714285714285714,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }, {
       "userWeight": 1,
       "criteria": [{
@@ -272,29 +301,35 @@
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AS",
         "title": "Werkdruk huisartsenzorg",
-        "scores": "[0,0 10,1]",
+        "label": "AS",
+        "color": "#146b30",
         "weight": -0.5,
-        "color": "#146b30"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AT",
         "title": "Aantal uren mantelzorg",
-        "scores": "[0,0 10,1]",
+        "label": "AT",
+        "color": "#00441b",
         "weight": 0.5,
-        "color": "#00441b"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "C",
-      "weight": 0.3333333333333333,
-      "color": "#313695"
+      "color": "#313695",
+      "weight": 0.14285714285714285,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }],
     "isPlaUpdated": true,
     "isPlaScaled": false,
@@ -304,15 +339,9 @@
     "featureIds": [
       "data/resourceTypes/wmbuurten.json#wmbuurten"
     ],
-    "weight": 1,
-    "calculationMode": 1,
-    "unknownValue": "zero",
-    "dynamicBoundsValue": "none",
-    "title": "FP1",
-    "label": "mca_FP1",
     "stringFormat": "{0:0.0}",
     "legend": {
-      "id": "profiel1",
+      "id": "mca_FP1",
       "description": "Functioneringsprofiel 1",
       "legendKind": "discrete",
       "visualAspect": "fillColor",
@@ -387,190 +416,230 @@
         },
         "color": "#005d13"
       }]
-    }
+    },
+    "calculationMode": 1,
+    "title": "FP1",
+    "label": "mca_FP1",
+    "weight": 1,
+    "unknownValue": "zero",
+    "dynamicBoundsValue": "none"
   }, {
     "userWeight": 1,
     "criteria": [{
-      "userWeight": 1,
+      "userWeight": 3,
       "criteria": [{
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AG",
         "title": "Afstand tot huisartsenpraktijk",
-        "scores": "[0,0 10,1]",
+        "label": "AG",
+        "color": "#40004b",
         "weight": -0.16666666666666666,
-        "color": "#40004b"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AH",
         "title": "Afstand tot apotheek",
-        "scores": "[0,0 10,1]",
+        "label": "AH",
+        "color": "#692076",
         "weight": -0.16666666666666666,
-        "color": "#692076"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AI",
         "title": "Afstand tot ziekenhuis (incl. buitenpoliklinieken)",
-        "scores": "[0,0 10,1]",
+        "label": "AI",
+        "color": "#884f98",
         "weight": -0.1111111111111111,
-        "color": "#884f98"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AJ",
         "title": "Afstand tot ziekenhuis (excl. buitenpoliklinieken)",
-        "scores": "[0,0 10,1]",
+        "label": "AJ",
+        "color": "#a580b6",
         "weight": -0.1111111111111111,
-        "color": "#a580b6"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AK",
         "title": "Afstand tot supermarkt",
-        "scores": "[0,0 10,1]",
+        "label": "AK",
+        "color": "#c4a8d0",
         "weight": -0.16666666666666666,
-        "color": "#c4a8d0"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AL",
         "title": "Afstand tot overige winkel voor dagelijkse levensmiddelen",
-        "scores": "[0,0 10,1]",
+        "label": "AL",
+        "color": "#e1cce4",
         "weight": -0.16666666666666666,
-        "color": "#e1cce4"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AM",
         "title": "Afstand tot treinstation",
-        "scores": "[0,0 10,1]",
+        "label": "AM",
+        "color": "#f0e9f1",
         "weight": -0.05555555555555555,
-        "color": "#f0e9f1"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AN",
         "title": "Aantal bushaltes per ha",
-        "scores": "[0,0 10,1]",
+        "label": "AN",
+        "color": "#ebf4e9",
         "weight": 0.05555555555555555,
-        "color": "#ebf4e9"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "A",
-      "weight": 0.3333333333333333,
-      "color": "#a50026"
+      "color": "#a50026",
+      "weight": 0.375,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }, {
-      "userWeight": 1,
+      "userWeight": 3,
       "criteria": [{
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AO",
         "title": "Diversiteit woningvoorraad",
-        "scores": "[0,0 10,1]",
+        "label": "AO",
+        "color": "#d1eccb",
         "weight": 0.16666666666666666,
-        "color": "#d1eccb"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AP",
         "title": "Diversiteit bevolkingsopbouw",
-        "scores": "[0,0 10,1]",
+        "label": "AP",
+        "color": "#a9dca3",
         "weight": 0.3333333333333333,
-        "color": "#a9dca3"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AQ",
         "title": "Veiligheid",
-        "scores": "[0,0 10,1]",
+        "label": "AQ",
+        "color": "#71bb74",
         "weight": 0.3333333333333333,
-        "color": "#71bb74"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AR",
         "title": "Kwaliteit fysieke omgeving",
-        "scores": "[0,0 10,1]",
+        "label": "AR",
+        "color": "#3c954d",
         "weight": 0.16666666666666666,
-        "color": "#3c954d"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "B",
-      "weight": 0.3333333333333333,
-      "color": "#ffffbf"
+      "color": "#ffffbf",
+      "weight": 0.375,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }, {
-      "userWeight": 1,
+      "userWeight": 2,
       "criteria": [{
         "userWeight": -1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AS",
         "title": "Werkdruk huisartsenzorg",
-        "scores": "[0,0 10,1]",
+        "label": "AS",
+        "color": "#146b30",
         "weight": -0.5,
-        "color": "#146b30"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AT",
         "title": "Aantal uren mantelzorg",
-        "scores": "[0,0 10,1]",
+        "label": "AT",
+        "color": "#00441b",
         "weight": 0.5,
-        "color": "#00441b"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "C",
-      "weight": 0.3333333333333333,
-      "color": "#313695"
+      "color": "#313695",
+      "weight": 0.25,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }],
     "isPlaUpdated": true,
     "isPlaScaled": false,
@@ -580,12 +649,6 @@
     "featureIds": [
       "data/resourceTypes/wmbuurten.json#wmbuurten"
     ],
-    "weight": 1,
-    "calculationMode": 1,
-    "unknownValue": "zero",
-    "dynamicBoundsValue": "none",
-    "title": "FP2",
-    "label": "mca_FP2",
     "stringFormat": "{0:0.0}",
     "legend": {
       "id": "profiel2",
@@ -663,286 +726,14 @@
         },
         "color": "#005d13"
       }]
-    }
-  }, 
-  {
-    "userWeight": 1,
-    "criteria": [{
-      "userWeight": 1,
-      "criteria": [{
-        "userWeight": -3,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AG",
-        "title": "Afstand tot huisartsenpraktijk",
-        "scores": "[0,0 10,1]",
-        "weight": -0.16666666666666666,
-        "color": "#40004b"
-      }, {
-        "userWeight": -3,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AH",
-        "title": "Afstand tot apotheek",
-        "scores": "[0,0 10,1]",
-        "weight": -0.16666666666666666,
-        "color": "#692076"
-      }, {
-        "userWeight": -2,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AI",
-        "title": "Afstand tot ziekenhuis (incl. buitenpoliklinieken)",
-        "scores": "[0,0 10,1]",
-        "weight": -0.1111111111111111,
-        "color": "#884f98"
-      }, {
-        "userWeight": -2,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AJ",
-        "title": "Afstand tot ziekenhuis (excl. buitenpoliklinieken)",
-        "scores": "[0,0 10,1]",
-        "weight": -0.1111111111111111,
-        "color": "#a580b6"
-      }, {
-        "userWeight": -3,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AK",
-        "title": "Afstand tot supermarkt",
-        "scores": "[0,0 10,1]",
-        "weight": -0.16666666666666666,
-        "color": "#c4a8d0"
-      }, {
-        "userWeight": -3,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AL",
-        "title": "Afstand tot overige winkel voor dagelijkse levensmiddelen",
-        "scores": "[0,0 10,1]",
-        "weight": -0.16666666666666666,
-        "color": "#e1cce4"
-      }, {
-        "userWeight": -1,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AM",
-        "title": "Afstand tot treinstation",
-        "scores": "[0,0 10,1]",
-        "weight": -0.05555555555555555,
-        "color": "#f0e9f1"
-      }, {
-        "userWeight": 1,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AN",
-        "title": "Aantal bushaltes per ha",
-        "scores": "[0,0 10,1]",
-        "weight": 0.05555555555555555,
-        "color": "#ebf4e9"
-      }],
-      "isPlaUpdated": true,
-      "isPlaScaled": false,
-      "mapToMinMax": true,
-      "title": "A",
-      "weight": 0.3333333333333333,
-      "color": "#a50026"
-    }, {
-      "userWeight": 1,
-      "criteria": [{
-        "userWeight": 1,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AO",
-        "title": "Diversiteit woningvoorraad",
-        "scores": "[0,0 10,1]",
-        "weight": 0.16666666666666666,
-        "color": "#d1eccb"
-      }, {
-        "userWeight": 2,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AP",
-        "title": "Diversiteit bevolkingsopbouw",
-        "scores": "[0,0 10,1]",
-        "weight": 0.3333333333333333,
-        "color": "#a9dca3"
-      }, {
-        "userWeight": 2,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AQ",
-        "title": "Veiligheid",
-        "scores": "[0,0 10,1]",
-        "weight": 0.3333333333333333,
-        "color": "#71bb74"
-      }, {
-        "userWeight": 1,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AR",
-        "title": "Kwaliteit fysieke omgeving",
-        "scores": "[0,0 10,1]",
-        "weight": 0.16666666666666666,
-        "color": "#3c954d"
-      }],
-      "isPlaUpdated": true,
-      "isPlaScaled": false,
-      "mapToMinMax": true,
-      "title": "B",
-      "weight": 0.3333333333333333,
-      "color": "#ffffbf"
-    }, {
-      "userWeight": 1,
-      "criteria": [{
-        "userWeight": -1,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AS",
-        "title": "Werkdruk huisartsenzorg",
-        "scores": "[0,0 10,1]",
-        "weight": -0.5,
-        "color": "#146b30"
-      }, {
-        "userWeight": 1,
-        "criteria": [],
-        "isPlaUpdated": true,
-        "isPlaScaled": true,
-        "mapToMinMax": true,
-        "label": "AT",
-        "title": "Aantal uren mantelzorg",
-        "scores": "[0,0 10,1]",
-        "weight": 0.5,
-        "color": "#00441b"
-      }],
-      "isPlaUpdated": true,
-      "isPlaScaled": false,
-      "mapToMinMax": true,
-      "title": "C",
-      "weight": 0.3333333333333333,
-      "color": "#313695"
-    }],
-    "isPlaUpdated": true,
-    "isPlaScaled": false,
-    "mapToMinMax": true,
-    "id": "cc-69ec-4db6-54a4-ee752b4db65a",
-    "userWeightMax": 5,
-    "featureIds": [
-      "data/resourceTypes/wmbuurten.json#wmbuurten"
-    ],
-    "weight": 1,
+    },
     "calculationMode": 1,
+    "title": "FP2",
+    "label": "mca_FP2",
+    "weight": 1,
     "unknownValue": "zero",
-    "dynamicBoundsValue": "none",
-    "title": "FP3",
-    "label": "mca_FP3",
-    "stringFormat": "{0:0.0}",
-    "legend": {
-      "id": "profiel3",
-      "description": "Functioneringsprofiel 3",
-      "legendKind": "discrete",
-      "visualAspect": "fillColor",
-      "legendEntries": [{
-        "label": "Groep 1",
-        "interval": {
-          "min": 0,
-          "max": 10
-        },
-        "color": "#f00"
-      }, {
-        "label": "Groep 2",
-        "interval": {
-          "min": 10,
-          "max": 20
-        },
-        "color": "#ff4d00"
-      }, {
-        "label": "Groep 3",
-        "interval": {
-          "min": 20,
-          "max": 30
-        },
-        "color": "#ffa400"
-      }, {
-        "label": "Groep 4",
-        "interval": {
-          "min": 30,
-          "max": 40
-        },
-        "color": "#ffda00"
-      }, {
-        "label": "Groep 5",
-        "interval": {
-          "min": 40,
-          "max": 50
-        },
-        "color": "#f9ff00"
-      }, {
-        "label": "Groep 6",
-        "interval": {
-          "min": 50,
-          "max": 60
-        },
-        "color": "#c0e200"
-      }, {
-        "label": "Groep 7",
-        "interval": {
-          "min": 60,
-          "max": 70
-        },
-        "color": "#39db00"
-      }, {
-        "label": "Groep 8",
-        "interval": {
-          "min": 70,
-          "max": 80
-        },
-        "color": "#01a200"
-      }, {
-        "label": "Groep 9",
-        "interval": {
-          "min": 80,
-          "max": 90
-        },
-        "color": "#017a00"
-      }, {
-        "label": "Groep 10",
-        "interval": {
-          "min": 90,
-          "max": 100
-        },
-        "color": "#005d13"
-      }]
-    }
-  },
-  {
+    "dynamicBoundsValue": "none"
+  }, {
     "userWeight": 1,
     "criteria": [{
       "userWeight": 1,
@@ -952,95 +743,113 @@
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AG",
         "title": "Afstand tot huisartsenpraktijk",
-        "scores": "[0,0 10,1]",
+        "label": "AG",
+        "color": "#40004b",
         "weight": -0.16666666666666666,
-        "color": "#40004b"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AH",
         "title": "Afstand tot apotheek",
-        "scores": "[0,0 10,1]",
+        "label": "AH",
+        "color": "#692076",
         "weight": -0.16666666666666666,
-        "color": "#692076"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AI",
         "title": "Afstand tot ziekenhuis (incl. buitenpoliklinieken)",
-        "scores": "[0,0 10,1]",
+        "label": "AI",
+        "color": "#884f98",
         "weight": -0.1111111111111111,
-        "color": "#884f98"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AJ",
         "title": "Afstand tot ziekenhuis (excl. buitenpoliklinieken)",
-        "scores": "[0,0 10,1]",
+        "label": "AJ",
+        "color": "#a580b6",
         "weight": -0.1111111111111111,
-        "color": "#a580b6"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AK",
         "title": "Afstand tot supermarkt",
-        "scores": "[0,0 10,1]",
+        "label": "AK",
+        "color": "#c4a8d0",
         "weight": -0.16666666666666666,
-        "color": "#c4a8d0"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -3,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AL",
         "title": "Afstand tot overige winkel voor dagelijkse levensmiddelen",
-        "scores": "[0,0 10,1]",
+        "label": "AL",
+        "color": "#e1cce4",
         "weight": -0.16666666666666666,
-        "color": "#e1cce4"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": -1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AM",
         "title": "Afstand tot treinstation",
-        "scores": "[0,0 10,1]",
+        "label": "AM",
+        "color": "#f0e9f1",
         "weight": -0.05555555555555555,
-        "color": "#f0e9f1"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AN",
         "title": "Aantal bushaltes per ha",
-        "scores": "[0,0 10,1]",
+        "label": "AN",
+        "color": "#ebf4e9",
         "weight": 0.05555555555555555,
-        "color": "#ebf4e9"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "A",
-      "weight": 0.3333333333333333,
-      "color": "#a50026"
+      "color": "#a50026",
+      "weight": 0.16666666666666666,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }, {
       "userWeight": 1,
       "criteria": [{
@@ -1049,82 +858,98 @@
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AO",
         "title": "Diversiteit woningvoorraad",
-        "scores": "[0,0 10,1]",
+        "label": "AO",
+        "color": "#d1eccb",
         "weight": 0.16666666666666666,
-        "color": "#d1eccb"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AP",
         "title": "Diversiteit bevolkingsopbouw",
-        "scores": "[0,0 10,1]",
+        "label": "AP",
+        "color": "#a9dca3",
         "weight": 0.3333333333333333,
-        "color": "#a9dca3"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 2,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AQ",
         "title": "Veiligheid",
-        "scores": "[0,0 10,1]",
+        "label": "AQ",
+        "color": "#71bb74",
         "weight": 0.3333333333333333,
-        "color": "#71bb74"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AR",
         "title": "Kwaliteit fysieke omgeving",
-        "scores": "[0,0 10,1]",
+        "label": "AR",
+        "color": "#3c954d",
         "weight": 0.16666666666666666,
-        "color": "#3c954d"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "B",
-      "weight": 0.3333333333333333,
-      "color": "#ffffbf"
+      "color": "#ffffbf",
+      "weight": 0.16666666666666666,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }, {
-      "userWeight": 1,
+      "userWeight": 4,
       "criteria": [{
         "userWeight": -1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AS",
         "title": "Werkdruk huisartsenzorg",
-        "scores": "[0,0 10,1]",
+        "label": "AS",
+        "color": "#146b30",
         "weight": -0.5,
-        "color": "#146b30"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }, {
         "userWeight": 1,
         "criteria": [],
         "isPlaUpdated": true,
         "isPlaScaled": true,
         "mapToMinMax": true,
-        "label": "AT",
         "title": "Aantal uren mantelzorg",
-        "scores": "[0,0 10,1]",
+        "label": "AT",
+        "color": "#00441b",
         "weight": 0.5,
-        "color": "#00441b"
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
       }],
       "isPlaUpdated": true,
       "isPlaScaled": false,
       "mapToMinMax": true,
       "title": "C",
-      "weight": 0.3333333333333333,
-      "color": "#313695"
+      "color": "#313695",
+      "weight": 0.6666666666666666,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
     }],
     "isPlaUpdated": true,
     "isPlaScaled": false,
@@ -1134,12 +959,6 @@
     "featureIds": [
       "data/resourceTypes/wmbuurten.json#wmbuurten"
     ],
-    "weight": 1,
-    "calculationMode": 1,
-    "unknownValue": "zero",
-    "dynamicBoundsValue": "none",
-    "title": "FP4",
-    "label": "mca_FP4",
     "stringFormat": "{0:0.0}",
     "legend": {
       "id": "profiel4",
@@ -1217,7 +1036,323 @@
         },
         "color": "#005d13"
       }]
-    }
+    },
+    "calculationMode": 1,
+    "title": "FP4",
+    "label": "mca_FP4",
+    "weight": 1,
+    "unknownValue": "zero",
+    "dynamicBoundsValue": "none"
+  }, {
+    "userWeight": 1,
+    "criteria": [{
+      "userWeight": 4,
+      "criteria": [{
+        "userWeight": -3,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Afstand tot huisartsenpraktijk",
+        "label": "AG",
+        "color": "#40004b",
+        "weight": -0.16666666666666666,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": -3,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Afstand tot apotheek",
+        "label": "AH",
+        "color": "#692076",
+        "weight": -0.16666666666666666,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": -2,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Afstand tot ziekenhuis (incl. buitenpoliklinieken)",
+        "label": "AI",
+        "color": "#884f98",
+        "weight": -0.1111111111111111,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": -2,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Afstand tot ziekenhuis (excl. buitenpoliklinieken)",
+        "label": "AJ",
+        "color": "#a580b6",
+        "weight": -0.1111111111111111,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": -3,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Afstand tot supermarkt",
+        "label": "AK",
+        "color": "#c4a8d0",
+        "weight": -0.16666666666666666,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": -3,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Afstand tot overige winkel voor dagelijkse levensmiddelen",
+        "label": "AL",
+        "color": "#e1cce4",
+        "weight": -0.16666666666666666,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": -1,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Afstand tot treinstation",
+        "label": "AM",
+        "color": "#f0e9f1",
+        "weight": -0.05555555555555555,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": 1,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Aantal bushaltes per ha",
+        "label": "AN",
+        "color": "#ebf4e9",
+        "weight": 0.05555555555555555,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }],
+      "isPlaUpdated": true,
+      "isPlaScaled": false,
+      "mapToMinMax": true,
+      "title": "A",
+      "color": "#a50026",
+      "weight": 0.4444444444444444,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
+    }, {
+      "userWeight": 2,
+      "criteria": [{
+        "userWeight": 1,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Diversiteit woningvoorraad",
+        "label": "AO",
+        "color": "#d1eccb",
+        "weight": 0.16666666666666666,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": 2,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Diversiteit bevolkingsopbouw",
+        "label": "AP",
+        "color": "#a9dca3",
+        "weight": 0.3333333333333333,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": 2,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Veiligheid",
+        "label": "AQ",
+        "color": "#71bb74",
+        "weight": 0.3333333333333333,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": 1,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Kwaliteit fysieke omgeving",
+        "label": "AR",
+        "color": "#3c954d",
+        "weight": 0.16666666666666666,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }],
+      "isPlaUpdated": true,
+      "isPlaScaled": false,
+      "mapToMinMax": true,
+      "title": "B",
+      "color": "#ffffbf",
+      "weight": 0.2222222222222222,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
+    }, {
+      "userWeight": 3,
+      "criteria": [{
+        "userWeight": -1,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Werkdruk huisartsenzorg",
+        "label": "AS",
+        "color": "#146b30",
+        "weight": -0.5,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }, {
+        "userWeight": 1,
+        "criteria": [],
+        "isPlaUpdated": true,
+        "isPlaScaled": true,
+        "mapToMinMax": true,
+        "title": "Aantal uren mantelzorg",
+        "label": "AT",
+        "color": "#00441b",
+        "weight": 0.5,
+        "scores": "[0,0 10,1]",
+        "unknownValue": "zero",
+        "dynamicBoundsValue": "none"
+      }],
+      "isPlaUpdated": true,
+      "isPlaScaled": false,
+      "mapToMinMax": true,
+      "title": "C",
+      "color": "#313695",
+      "weight": 0.3333333333333333,
+      "unknownValue": "zero",
+      "dynamicBoundsValue": "none"
+    }],
+    "isPlaUpdated": true,
+    "isPlaScaled": false,
+    "mapToMinMax": true,
+    "id": "cc-69ec-4db6-54a4-ee752b4db65a",
+    "userWeightMax": 5,
+    "featureIds": [
+      "data/resourceTypes/wmbuurten.json#wmbuurten"
+    ],
+    "stringFormat": "{0:0.0}",
+    "legend": {
+      "id": "profiel3",
+      "description": "Functioneringsprofiel 3",
+      "legendKind": "discrete",
+      "visualAspect": "fillColor",
+      "legendEntries": [{
+        "label": "Groep 1",
+        "interval": {
+          "min": 0,
+          "max": 10
+        },
+        "color": "#f00"
+      }, {
+        "label": "Groep 2",
+        "interval": {
+          "min": 10,
+          "max": 20
+        },
+        "color": "#ff4d00"
+      }, {
+        "label": "Groep 3",
+        "interval": {
+          "min": 20,
+          "max": 30
+        },
+        "color": "#ffa400"
+      }, {
+        "label": "Groep 4",
+        "interval": {
+          "min": 30,
+          "max": 40
+        },
+        "color": "#ffda00"
+      }, {
+        "label": "Groep 5",
+        "interval": {
+          "min": 40,
+          "max": 50
+        },
+        "color": "#f9ff00"
+      }, {
+        "label": "Groep 6",
+        "interval": {
+          "min": 50,
+          "max": 60
+        },
+        "color": "#c0e200"
+      }, {
+        "label": "Groep 7",
+        "interval": {
+          "min": 60,
+          "max": 70
+        },
+        "color": "#39db00"
+      }, {
+        "label": "Groep 8",
+        "interval": {
+          "min": 70,
+          "max": 80
+        },
+        "color": "#01a200"
+      }, {
+        "label": "Groep 9",
+        "interval": {
+          "min": 80,
+          "max": 90
+        },
+        "color": "#017a00"
+      }, {
+        "label": "Groep 10",
+        "interval": {
+          "min": 90,
+          "max": 100
+        },
+        "color": "#005d13"
+      }]
+    },
+    "calculationMode": 1,
+    "title": "FP3",
+    "label": "mca_FP3",
+    "weight": 1,
+    "unknownValue": "zero",
+    "dynamicBoundsValue": "none"
   }],
   "unused": {
     "id": "toelichting",
