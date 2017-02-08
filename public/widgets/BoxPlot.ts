@@ -23,17 +23,17 @@ module BoxPlot {
         };
     }]);
 
-    myModule.directive('numbertocustom', () => {
+    myModule.directive('showaspercentage', () => {
         return {
             restrict: 'A',
             require: 'ngModel',
             link: (scope, element, attrs, ngModel) => {
                 if (ngModel) {
                     ngModel.$parsers.push((value) => {
-                        return (1 - (value / 100));
+                        return (value / 100);
                     });
                     ngModel.$formatters.push((value) => {
-                        return ((1 - value) * 100);
+                        return (value * 100);
                     });
                 }
             }
@@ -123,6 +123,9 @@ module BoxPlot {
         private selectedCriterionIndex: number = 0;
         private selectedCriterion: Criterion;
         private flatCriteria: Criterion[] = [];
+        private maximumUnknowns: Dictionary < number > = {
+            'mca': 1
+        };
 
         private charts: Dictionary < any > = {};
         private chartSvgs: Dictionary < any > = {};
@@ -190,7 +193,7 @@ module BoxPlot {
                     switch (action) {
                         case 'updated':
                         case 'deactivate':
-                            this.updateCharts();
+                            this.handleMcaUpdateMessage(mca);
                             break;
                         default:
                             break;
@@ -225,10 +228,25 @@ module BoxPlot {
                 this.toggleSpinner('mca', true);
                 this.$timeout(() => {
                     this.mcaScope.vm.updateMca();
+                    this.mcaScope.vm.setStyle(null);
                     this.updateCharts();
                     this.toggleSpinner('mca', false);
                 }, 100);
             }
+        }
+
+        private handleMcaUpdateMessage(mca ? : Mca.Models.Mca) {
+            if (mca && mca.id !== this.selectedMca.id) {
+                this.selectedMca = mca;
+                this.updateWidget();
+            }
+            this.updateCharts();
+        }
+
+        private updateWidget() {
+            this.flatCriteria = this.getFlatCriteria(this.selectedMca);
+            this.selectedCriterionIndex = Math.min(this.selectedCriterionIndex, this.flatCriteria.length - 1);
+            this.selectedCriterion = this.flatCriteria[this.selectedCriterionIndex];
         }
 
         private updateCharts() {
@@ -237,6 +255,7 @@ module BoxPlot {
             this.updateChart('boxplotcontainer1', 'value');
             this.updateChart('boxplotcontainer2', 'score');
             this.updateChart('boxplotcontainer3', 'total');
+            this.disableIncompleteFeatures();
         }
 
         private updateChart(divId: string, type: string) {
@@ -272,12 +291,24 @@ module BoxPlot {
                     .on('click', (i, d) => {
                         if (d3.event.defaultPrevented) return; // click suppressed
                         this.selectFeatureFromIndicatorValue(i, d);
+                    })
+                    .on('mouseover', function (i, d) {
+                        d3.select(this).style('cursor', 'pointer');
+                    })
+                    .on('mouseout', function (i, d) {
+                        d3.select(this).style('cursor', 'default');
                     });
             } else if (type === 'total') {
                 this.chartSvgs[divId].selectAll('circle.outlier')
                     .on('click', (i, d) => {
                         if (d3.event.defaultPrevented) return; // click suppressed
                         this.selectFeatureFromTotalScore(i, d);
+                    })
+                    .on('mouseover', function (i, d) {
+                        d3.select(this).style('cursor', 'pointer');
+                    })
+                    .on('mouseout', function (i, d) {
+                        d3.select(this).style('cursor', 'default');
                     });
             }
         }
@@ -318,7 +349,7 @@ module BoxPlot {
                 this.$scope.statsScores.max = _.max(data[0]);
                 this.$scope.statsScores.avg = this.getAverage(_.values(data[0]));
             } else if (type === 'total') {
-                rows = this.getFeatureValues(mca.label);
+                rows = this.mcaScope.vm.getFeatureScores(mca.label);
                 data = [rows];
                 this.$scope.statsTotal.min = _.min(rows);
                 this.$scope.statsTotal.max = _.max(rows);
@@ -327,27 +358,23 @@ module BoxPlot {
             return data;
         }
 
-        private getFeatureValues(label: string): any[] {
-            let rows = [];
-            this.mcaScope.vm.features.forEach((f) => {
-                if (f.properties.hasOwnProperty(label)) {
-                    rows.push(f.properties[label]);
-                }
-            });
-            return rows;
-        }
-
-        private getFeaturesHavingLabel(label: string): IFeature[] {
+        private getFeaturesHavingLabel(label: string): {
+            id: string,
+            score: number
+        }[] {
             let fts = [];
             this.mcaScope.vm.features.forEach((f) => {
-                if (f.properties.hasOwnProperty(label)) {
-                    fts.push(f);
+                if (f.properties.hasOwnProperty(label) && typeof f.properties[label] === 'number') {
+                    fts.push({
+                        id: f.id,
+                        score: f.properties[label]
+                    });
                 }
             });
-            return fts;
+            return _.sortBy(fts, 'score');
         }
 
-        private getInverseScores(scores: Dictionary < any > ):  Dictionary < any > {
+        private getInverseScores(scores: Dictionary < any > ): Dictionary < any > {
             return _.map(scores, (val, key) => {
                 return 1 - val;
             });
@@ -358,6 +385,7 @@ module BoxPlot {
             this.createChart('boxplotcontainer1', 'Indicator waardes', 'value');
             this.createChart('boxplotcontainer2', 'Indicator scores', 'score');
             this.createChart('boxplotcontainer3', 'Totale MCA scores', 'total');
+            this.disableIncompleteFeatures();
         }
 
         private createChart(divId: string, title: string, type: string) {
@@ -418,12 +446,24 @@ module BoxPlot {
                     .on('click', (i, d) => {
                         if (d3.event.defaultPrevented) return; // click suppressed
                         this.selectFeatureFromIndicatorValue(i, d);
+                    })
+                    .on('mouseover', function (i, d) {
+                        d3.select(this).style('cursor', 'pointer');
+                    })
+                    .on('mouseout', function (i, d) {
+                        d3.select(this).style('cursor', 'default');
                     });
             } else if (type === 'total') {
                 svg.selectAll('circle.outlier')
                     .on('click', (i, d) => {
                         if (d3.event.defaultPrevented) return; // click suppressed
                         this.selectFeatureFromTotalScore(i, d);
+                    })
+                    .on('mouseover', function (i, d) {
+                        d3.select(this).style('cursor', 'pointer');
+                    })
+                    .on('mouseout', function (i, d) {
+                        d3.select(this).style('cursor', 'default');
                     });
             }
 
@@ -482,8 +522,37 @@ module BoxPlot {
         private selectFeatureFromTotalScore(index: number, data: any) {
             let mca = this.selectedMca;
             let c = 0;
-            let f = this.getFeaturesHavingLabel(mca.label)[index];
+            let idScoreObject = this.getFeaturesHavingLabel(mca.label)[index];
+            let f = this.$layerService.findFeatureById(idScoreObject.id);
             if (f) this.$layerService.selectFeature(f);
+        }
+
+        private disableIncompleteFeatures() {
+            let fts = this.mcaScope.vm.features;
+            if (!fts) return;
+            let mca = this.selectedMca;
+            fts.forEach((f) => {
+                if (!f.properties) return;
+                let invalidProperties = 0;
+                this.flatCriteria.forEach((crit) => {
+                    if (!f.properties.hasOwnProperty(crit.label) || typeof f.properties[crit.label] !== 'number') {
+                        invalidProperties += 1;
+                    }
+                });
+                if (invalidProperties / this.flatCriteria.length > (this.maximumUnknowns['mca'])) {
+                    if (f.properties[mca.label] > -1) {
+                        // If feature is now incomplete, but wasn't before:
+                        f.properties['_' + mca.label] = f.properties[mca.label];
+                        f.properties[mca.label] = -1;
+                    }
+                } else {
+                    if (f.properties[mca.label] === -1) {
+                        // If feature was incomplete, but isn't anymore:
+                        f.properties[mca.label] = f.properties['_' + mca.label];
+                    }
+                }
+            });
+            this.$layerService.updateLayerFeatures(fts[0].layer);
         }
 
         private updateFeatureCount(numberOfValidItems: number) {
@@ -538,8 +607,7 @@ module BoxPlot {
                 this.$timeout(() => {
                     this.$scope.availableMcas = mcaScope.vm.availableMcas;
                     this.selectedMca = mcaScope.vm.mca;
-                    this.flatCriteria = this.getFlatCriteria(this.selectedMca);
-                    this.selectedCriterion = this.flatCriteria[this.selectedCriterionIndex];
+                    this.updateWidget();
                 }, 0);
             }
             return mcaScope;

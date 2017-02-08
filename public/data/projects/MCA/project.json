@@ -343,6 +343,7 @@
     "legendType": "dynamic",
     "legend": {
       "id": "mca_FP1",
+      "title": "Functioneringsprofiel 1",
       "description": "Functioneringsprofiel 1",
       "legendKind": "discrete",
       "visualAspect": "fillColor",
@@ -653,7 +654,8 @@
     "stringFormat": "{0:0.0}",
     "legendType": "dynamic",
     "legend": {
-      "id": "profiel2",
+      "id": "mca_FP2",
+      "title": "Functioneringsprofiel 2",
       "description": "Functioneringsprofiel 2",
       "legendKind": "discrete",
       "visualAspect": "fillColor",
@@ -964,7 +966,8 @@
     "stringFormat": "{0:0.0}",
     "legendType": "dynamic",
     "legend": {
-      "id": "profiel4",
+      "id": "mca_FP4",
+      "title": "Functioneringsprofiel 4",
       "description": "Functioneringsprofiel 4",
       "legendKind": "discrete",
       "visualAspect": "fillColor",
@@ -1275,7 +1278,8 @@
     "stringFormat": "{0:0.0}",
     "legendType": "dynamic",
     "legend": {
-      "id": "profiel3",
+      "id": "mca_FP3",
+      "title": "Functioneringsprofiel 3",
       "description": "Functioneringsprofiel 3",
       "legendKind": "discrete",
       "visualAspect": "fillColor",
