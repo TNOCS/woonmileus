@@ -102,6 +102,12 @@ module BoxPlot {
         autoUpdate: boolean;
     }
 
+    export interface ICriterionCompleteness {
+        criterionLength: number;
+        maxUnknownPercentage: number;
+    }
+
+
     export class BoxPlotCtrl {
         private mcaScope: Mca.IMcaScope;
         private widget: csComp.Services.IWidget;
@@ -123,9 +129,7 @@ module BoxPlot {
         private selectedCriterionIndex: number = 0;
         private selectedCriterion: Criterion;
         private flatCriteria: Criterion[] = [];
-        private maximumUnknowns: Dictionary < number > = {
-            'mca': 1
-        };
+        private criterionCompleteness: Dictionary < ICriterionCompleteness > = {};
 
         private charts: Dictionary < any > = {};
         private chartSvgs: Dictionary < any > = {};
@@ -236,6 +240,7 @@ module BoxPlot {
         }
 
         private handleMcaUpdateMessage(mca ? : Mca.Models.Mca) {
+            if (!this.selectedMca) return;
             if (mca && mca.id !== this.selectedMca.id) {
                 this.selectedMca = mca;
                 this.updateWidget();
@@ -533,26 +538,45 @@ module BoxPlot {
             let mca = this.selectedMca;
             fts.forEach((f) => {
                 if (!f.properties) return;
-                let invalidProperties = 0;
-                this.flatCriteria.forEach((crit) => {
-                    if (!f.properties.hasOwnProperty(crit.label) || typeof f.properties[crit.label] !== 'number') {
-                        invalidProperties += 1;
+                let nrOfUnknowns: Dictionary < number > = {};
+                mca.criteria.forEach(c => {
+                    if (c.criteria && c.criteria.length > 0) {
+                        nrOfUnknowns[c.title] = 0;
+                        c.criteria.forEach((subc) => {
+                            if (!f.properties.hasOwnProperty(subc.label) || typeof f.properties[subc.label] !== 'number') {
+                                nrOfUnknowns[c.title] += 1;
+                            }
+                        });
                     }
                 });
-                if (invalidProperties / this.flatCriteria.length > (this.maximumUnknowns['mca'])) {
-                    if (f.properties[mca.label] > -1) {
-                        // If feature is now incomplete, but wasn't before:
-                        f.properties['_' + mca.label] = f.properties[mca.label];
-                        f.properties[mca.label] = -1;
-                    }
-                } else {
-                    if (f.properties[mca.label] === -1) {
-                        // If feature was incomplete, but isn't anymore:
-                        f.properties[mca.label] = f.properties['_' + mca.label];
-                    }
-                }
+                nrOfUnknowns['mca'] = _.reduce(nrOfUnknowns, (memo: number, val: number) => {
+                    return memo + val;
+                }, 0);
+                this.processIncompleteFeatures(nrOfUnknowns, f);
             });
             this.$layerService.updateLayerFeatures(fts[0].layer);
+        }
+
+        /** Grey out incomplete features, activate complete features */
+        private processIncompleteFeatures(nrOfUnknowns: Dictionary < number > , f: IFeature) {
+            let mca = this.selectedMca;
+            let cc = this.criterionCompleteness;
+            let isInvalid;
+            Object.keys(nrOfUnknowns).forEach((critKey) => {
+                let nrInvalidProperties = nrOfUnknowns[critKey];
+                if (nrInvalidProperties / cc[critKey].criterionLength > (cc[critKey].maxUnknownPercentage)) {
+                    isInvalid = true;
+                }
+            });
+            let wasInvalid = f.properties[mca.label] === -1;
+            if (isInvalid && !wasInvalid) {
+                // If feature is now incomplete, but wasn't before:
+                f.properties['_' + mca.label] = f.properties[mca.label];
+                f.properties[mca.label] = -1;
+            } else if (wasInvalid && !isInvalid) {
+                // If feature was incomplete, but isn't anymore:
+                f.properties[mca.label] = f.properties['_' + mca.label];
+            }
         }
 
         private updateFeatureCount(numberOfValidItems: number) {
@@ -577,13 +601,22 @@ module BoxPlot {
 
         private getFlatCriteria(mca: McaModel): Criterion[] {
             let result = [];
+            this.criterionCompleteness = {};
             mca.criteria.forEach((c: Criterion) => {
                 if (c.criteria && c.criteria.length > 0) {
                     c.criteria.forEach((subc) => {
                         result.push(subc);
                     });
+                    this.criterionCompleteness[c.title] = {
+                        maxUnknownPercentage: 1,
+                        criterionLength: c.criteria.length
+                    };
                 }
             });
+            this.criterionCompleteness['mca'] = {
+                maxUnknownPercentage: 1,
+                criterionLength: result.length
+            };
             return result;
         }
 

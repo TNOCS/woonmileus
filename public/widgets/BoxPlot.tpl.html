@@ -119,7 +119,8 @@
                         <div class="form-group">
                             <label for="filter-val-total">Maximum percentage onbekend voor totale MCA<span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip=""></i></span></label>
                             <input id="filter-val-total" ng-change="vm.disableIncompleteFeatures()" ng-model-options='{ debounce: 800 }' type="number"
-                                min="0" max="100" placeholder="Max. % onbekend" ng-model="vm.maximumUnknowns.mca" showaspercentage></input>
+                                min="0" max="100" placeholder="Max. % onbekend" ng-model="vm.criterionCompleteness['mca'].maxUnknownPercentage"
+                                showaspercentage></input>%
                         </div>
                         <div class="form-group">
                             <label>Maximum percentage onbekend voor de secties: <span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip=""></i></span></label>
@@ -127,7 +128,8 @@
                         <div class="form-group" ng-repeat="section in vm.selectedMca.criteria track by $index">
                             <label for="filter-val-{{$index}}">{{section.title}}<span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip=""></i></span></label>
                             <input id="filter-val-{{$index}}" ng-change="vm.disableIncompleteFeatures()" ng-model-options='{ debounce: 800 }' type="number"
-                                placeholder="Max. % onbekend" ng-model="vm.maximumUnknowns[section.title]" showaspercentage disabled></input>
+                                min="0" max="100" placeholder="Max. % onbekend" ng-model="vm.criterionCompleteness[section.title].maxUnknownPercentage"
+                                showaspercentage></input>%
                         </div>
                     </form>
                 </div>
