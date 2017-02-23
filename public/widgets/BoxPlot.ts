@@ -117,7 +117,7 @@ module BoxPlot {
         private unknownValues: Dictionary < 'zero' | 'half' | 'average' | number > = {
             'Nul (0)': 'zero',
             'Half (0.5)': 'half',
-            'Gemiddelde': 'average',
+            // 'Gemiddelde': 'average',
             'Aangepast': 0
         };
         private boundsValues: Dictionary < 'none' | '1.5_iqr' | '3_iqr' > = {

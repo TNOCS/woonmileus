@@ -117,16 +117,16 @@
                     <span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip="Negeer buurten vanaf een bepaald aantal onbekende waardes voor de indicatoren."></i></span>
                     <form class="form">
                         <div class="form-group">
-                            <label for="filter-val-total">Maximum percentage onbekend voor totale MCA<span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip=""></i></span></label>
+                            <label for="filter-val-total">Maximum percentage onbekend voor totale MCA<span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip="Geef aan wat het maximum percentage aan onbekende indicatorwaardes mag zijn om de buurtscore te tonen in de resultaten."></i></span></label>
                             <input id="filter-val-total" ng-change="vm.disableIncompleteFeatures()" ng-model-options='{ debounce: 800 }' type="number"
                                 min="0" max="100" placeholder="Max. % onbekend" ng-model="vm.criterionCompleteness['mca'].maxUnknownPercentage"
                                 showaspercentage></input>%
                         </div>
                         <div class="form-group">
-                            <label>Maximum percentage onbekend voor de secties: <span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip=""></i></span></label>
+                            <label>Maximum percentage onbekend voor de secties: <span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip="Geef per sectie aan wat het maximum percentage aan onbekende waardes mag zijn om de buurtscore te tonen in de resultaten."></i></span></label>
                         </div>
                         <div class="form-group" ng-repeat="section in vm.selectedMca.criteria track by $index">
-                            <label for="filter-val-{{$index}}">{{section.title}}<span><i class="fa fa-question-circle pointer" style="padding-left: 12px;" aria-hidden="true" uib-tooltip=""></i></span></label>
+                            <label for="filter-val-{{$index}}">{{section.title}}</label>
                             <input id="filter-val-{{$index}}" ng-change="vm.disableIncompleteFeatures()" ng-model-options='{ debounce: 800 }' type="number"
                                 min="0" max="100" placeholder="Max. % onbekend" ng-model="vm.criterionCompleteness[section.title].maxUnknownPercentage"
                                 showaspercentage></input>%
