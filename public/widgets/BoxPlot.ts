@@ -231,9 +231,11 @@ module BoxPlot {
             if (forceUpdate || this.$scope.data.autoUpdate) {
                 this.toggleSpinner('mca', true);
                 this.$timeout(() => {
+                    this.resetIncompleteFeatures();
                     this.mcaScope.vm.updateMca();
                     this.mcaScope.vm.setStyle(null);
                     this.updateCharts();
+                    this.disableIncompleteFeatures();
                     this.toggleSpinner('mca', false);
                 }, 100);
             }
@@ -260,7 +262,6 @@ module BoxPlot {
             this.updateChart('boxplotcontainer1', 'value');
             this.updateChart('boxplotcontainer2', 'score');
             this.updateChart('boxplotcontainer3', 'total');
-            this.disableIncompleteFeatures();
         }
 
         private updateChart(divId: string, type: string) {
@@ -390,7 +391,6 @@ module BoxPlot {
             this.createChart('boxplotcontainer1', 'Indicator waardes', 'value');
             this.createChart('boxplotcontainer2', 'Indicator scores', 'score');
             this.createChart('boxplotcontainer3', 'Totale MCA scores', 'total');
-            this.disableIncompleteFeatures();
         }
 
         private createChart(divId: string, title: string, type: string) {
@@ -530,6 +530,18 @@ module BoxPlot {
             let idScoreObject = this.getFeaturesHavingLabel(mca.label)[index];
             let f = this.$layerService.findFeatureById(idScoreObject.id);
             if (f) this.$layerService.selectFeature(f);
+        }
+
+        private resetIncompleteFeatures() {
+            let fts = this.mcaScope.vm.features;
+            if (!fts) return;
+            let mca = this.selectedMca;
+            fts.forEach((f) => {
+                if (!f.properties) return;
+                if (f.properties.hasOwnProperty(mca.label) && f.properties.hasOwnProperty('_' + mca.label)) {
+                    f.properties[mca.label] = f.properties['_' + mca.label];
+                }
+            });
         }
 
         private disableIncompleteFeatures() {
